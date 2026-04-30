@@ -1,0 +1,501 @@
+product_id,product_name,category,purchase_date,inventory_age_days,original_cost_usd,current_price_usd,waste_footprint_kg,stock_level
+SKU-1000,Charging Cable,Electronics,2025-11-22,159,144.32,115.46,2.23,38
+SKU-1001,Recycled Paper Notebook,Office Supplies,2026-01-12,108,110.08,88.06,3.57,36
+SKU-1002,Coffee Mug,Home & Kitchen,2026-02-13,76,85.72,102.86,4.1,49
+SKU-1003,Coffee Mug,Home & Kitchen,2025-12-10,141,123.85,99.08,2.31,21
+SKU-1004,Silicone Spatula,Home & Kitchen,2025-12-28,123,120.59,96.47,4.83,24
+SKU-1005,Puzzle Set,Toys,2025-12-01,150,32.91,26.33,4.22,35
+SKU-1006,Eco-friendly Plush,Toys,2026-01-16,104,31.2,24.96,4.2,27
+SKU-1007,Smartphone,Electronics,2025-12-31,120,129.38,103.5,13.41,6
+SKU-1008,Whiteboard Markers,Office Supplies,2026-03-01,60,147.33,176.8,3.29,29
+SKU-1009,Ergonomic Mouse,Office Supplies,2026-02-02,87,88.97,106.76,1.75,14
+SKU-1010,Bamboo Cutting Board,Home & Kitchen,2025-12-09,142,32.21,25.77,1.4,34
+SKU-1011,Smartphone,Electronics,2026-04-18,12,35.71,42.85,5.67,22
+SKU-1012,Cotton T-Shirt,Apparel,2025-11-23,158,21.59,17.27,4.98,21
+SKU-1013,Bamboo Cutting Board,Home & Kitchen,2025-11-18,163,118.22,94.58,4.28,14
+SKU-1014,Charging Cable,Electronics,2026-01-16,104,75.25,60.2,2.64,44
+SKU-1015,LED Desk Lamp,Home & Kitchen,2025-12-13,138,105.09,84.07,1.66,49
+SKU-1016,Smartphone,Electronics,2026-02-11,78,46.49,55.79,14.09,45
+SKU-1017,Silicone Spatula,Home & Kitchen,2025-12-20,131,19.28,15.42,1.58,21
+SKU-1018,Silicone Spatula,Home & Kitchen,2025-12-18,133,23.75,19.0,4.58,13
+SKU-1019,LED Desk Lamp,Home & Kitchen,2026-03-16,45,32.25,38.7,2.67,13
+SKU-1020,Recycled Paper Notebook,Office Supplies,2026-01-31,89,55.21,66.25,3.21,30
+SKU-1021,Puzzle Set,Toys,2026-01-03,117,144.78,115.82,0.79,15
+SKU-1022,Smartphone,Electronics,2026-02-24,65,70.01,84.01,7.28,5
+SKU-1023,Denim Jeans,Apparel,2026-01-14,106,102.43,81.94,1.84,44
+SKU-1024,Puzzle Set,Toys,2025-12-11,140,71.89,57.51,4.89,50
+SKU-1025,Canvas Sneakers,Apparel,2025-12-11,140,116.22,92.98,3.84,25
+SKU-1026,Smartphone,Electronics,2026-02-02,87,137.82,165.38,8.51,12
+SKU-1027,Puzzle Set,Toys,2025-11-15,166,96.41,77.13,0.63,25
+SKU-1028,Ergonomic Mouse,Office Supplies,2026-02-26,63,128.86,154.63,1.15,10
+SKU-1029,Ergonomic Mouse,Office Supplies,2026-01-22,98,72.32,57.86,2.47,45
+SKU-1030,Wooden Building Blocks,Toys,2026-02-17,72,19.74,23.69,3.43,40
+SKU-1031,Laptop Stand,Electronics,2026-02-24,65,52.39,62.87,3.92,26
+SKU-1032,Denim Jeans,Apparel,2026-01-29,91,59.1,47.28,1.69,8
+SKU-1033,Laptop Stand,Electronics,2026-04-02,28,106.32,127.58,7.76,44
+SKU-1034,Puzzle Set,Toys,2026-03-05,56,65.71,78.85,1.47,44
+SKU-1035,Ergonomic Mouse,Office Supplies,2025-11-22,159,26.74,21.39,1.8,48
+SKU-1036,Ergonomic Mouse,Office Supplies,2025-12-27,124,81.52,65.22,3.99,48
+SKU-1037,Whiteboard Markers,Office Supplies,2026-02-16,73,62.55,75.06,4.87,50
+SKU-1038,Canvas Sneakers,Apparel,2026-01-24,96,130.77,104.62,2.76,35
+SKU-1039,Eco-friendly Plush,Toys,2026-04-01,29,102.01,122.41,2.14,23
+SKU-1040,Eco-friendly Plush,Toys,2026-02-24,65,52.39,62.87,1.98,48
+SKU-1041,Canvas Sneakers,Apparel,2026-01-08,112,59.27,47.42,2.67,45
+SKU-1042,Smartphone,Electronics,2026-04-17,13,98.93,118.72,3.03,15
+SKU-1043,Puzzle Set,Toys,2025-12-30,121,141.82,113.46,1.2,49
+SKU-1044,Ergonomic Mouse,Office Supplies,2026-03-09,52,27.57,33.08,4.54,11
+SKU-1045,Smartphone,Electronics,2026-02-05,84,45.6,54.72,2.22,21
+SKU-1046,Silicone Spatula,Home & Kitchen,2026-03-12,49,46.42,55.7,2.8,12
+SKU-1047,Eco-friendly Plush,Toys,2026-01-17,103,24.88,19.9,4.25,27
+SKU-1048,Whiteboard Markers,Office Supplies,2025-12-02,149,127.77,102.22,2.36,22
+SKU-1049,Canvas Sneakers,Apparel,2026-03-23,38,26.3,31.56,1.84,12
+SKU-1050,Wooden Building Blocks,Toys,2025-12-28,123,146.85,117.48,0.71,25
+SKU-1051,Recycled Paper Notebook,Office Supplies,2026-01-27,93,126.34,101.07,4.8,2
+SKU-1052,Cotton T-Shirt,Apparel,2025-11-19,162,47.97,38.38,3.06,21
+SKU-1053,Laptop Stand,Electronics,2025-11-21,160,119.62,95.7,14.39,4
+SKU-1054,Smartphone,Electronics,2025-12-14,137,149.16,119.33,12.16,41
+SKU-1055,Ergonomic Mouse,Office Supplies,2026-04-19,11,20.84,25.01,1.96,27
+SKU-1056,Eco-friendly Plush,Toys,2026-03-16,45,116.04,139.25,4.63,11
+SKU-1057,Wooden Building Blocks,Toys,2025-10-31,181,76.36,61.09,0.84,14
+SKU-1058,LED Desk Lamp,Home & Kitchen,2026-01-04,116,16.6,13.28,1.99,23
+SKU-1059,Eco-friendly Plush,Toys,2026-04-10,20,68.91,82.69,4.69,28
+SKU-1060,Laptop Stand,Electronics,2026-02-06,83,128.2,153.84,14.8,6
+SKU-1061,Bamboo Cutting Board,Home & Kitchen,2025-10-24,188,32.96,26.37,3.69,38
+SKU-1062,Silicone Spatula,Home & Kitchen,2026-03-06,55,31.17,37.4,2.87,12
+SKU-1063,Silicone Spatula,Home & Kitchen,2025-12-16,135,115.39,92.31,2.97,28
+SKU-1064,Smartphone,Electronics,2026-04-05,25,105.35,126.42,6.6,47
+SKU-1065,Charging Cable,Electronics,2026-01-02,118,38.18,30.54,8.03,26
+SKU-1066,Canvas Sneakers,Apparel,2025-11-25,156,68.59,54.87,4.05,26
+SKU-1067,Cotton T-Shirt,Apparel,2025-10-20,192,34.31,27.45,3.25,1
+SKU-1068,Puzzle Set,Toys,2025-10-29,183,122.35,97.88,1.11,17
+SKU-1069,Laptop Stand,Electronics,2026-02-25,64,146.12,175.34,2.19,37
+SKU-1070,Whiteboard Markers,Office Supplies,2026-03-15,46,145.71,174.85,2.12,23
+SKU-1071,Bluetooth Speaker,Electronics,2025-12-13,138,26.06,20.85,2.83,18
+SKU-1072,Wooden Building Blocks,Toys,2025-12-03,148,26.3,21.04,4.63,45
+SKU-1073,Ergonomic Mouse,Office Supplies,2026-03-22,39,54.4,65.28,4.03,15
+SKU-1074,Recycled Polyester Jacket,Apparel,2025-12-28,123,95.89,76.71,3.69,5
+SKU-1075,Recycled Polyester Jacket,Apparel,2025-12-03,148,55.91,44.73,2.83,7
+SKU-1076,Coffee Mug,Home & Kitchen,2025-11-10,171,146.89,117.51,3.96,47
+SKU-1077,Ergonomic Mouse,Office Supplies,2026-02-18,71,98.12,117.74,0.78,26
+SKU-1078,Laptop Stand,Electronics,2025-11-29,152,73.68,58.94,5.12,23
+SKU-1079,Puzzle Set,Toys,2026-02-23,66,67.19,80.63,3.18,26
+SKU-1080,Wooden Building Blocks,Toys,2026-01-25,95,117.97,94.38,1.56,39
+SKU-1081,Ergonomic Mouse,Office Supplies,2025-11-22,159,61.28,49.02,0.84,9
+SKU-1082,Smartphone,Electronics,2026-02-12,77,45.53,54.64,14.0,28
+SKU-1083,Ergonomic Mouse,Office Supplies,2026-04-16,14,22.11,26.53,2.06,19
+SKU-1084,Wooden Building Blocks,Toys,2026-02-19,70,136.75,164.1,3.21,17
+SKU-1085,Ergonomic Mouse,Office Supplies,2026-02-26,63,113.36,136.03,2.65,4
+SKU-1086,Recycled Paper Notebook,Office Supplies,2026-03-15,46,16.94,20.33,1.33,28
+SKU-1087,Bluetooth Speaker,Electronics,2026-01-21,99,23.79,19.03,7.12,24
+SKU-1088,Coffee Mug,Home & Kitchen,2025-12-30,121,84.31,67.45,4.36,21
+SKU-1089,Bluetooth Speaker,Electronics,2025-12-03,148,138.37,110.7,10.49,20
+SKU-1090,Wooden Building Blocks,Toys,2026-02-02,87,106.57,127.88,2.36,26
+SKU-1091,Bluetooth Speaker,Electronics,2025-11-27,154,72.48,57.98,11.26,12
+SKU-1092,Ergonomic Mouse,Office Supplies,2026-01-22,98,76.87,61.5,2.59,9
+SKU-1093,Ergonomic Mouse,Office Supplies,2026-01-17,103,73.91,59.13,4.94,7
+SKU-1094,Laptop Stand,Electronics,2025-11-12,169,40.65,32.52,9.25,28
+SKU-1095,Recycled Paper Notebook,Office Supplies,2026-03-19,42,64.32,77.18,3.26,38
+SKU-1096,Ergonomic Mouse,Office Supplies,2026-02-26,63,89.2,107.04,1.15,29
+SKU-1097,Recycled Paper Notebook,Office Supplies,2026-03-30,31,104.92,125.9,4.53,2
+SKU-1098,Cotton T-Shirt,Apparel,2026-03-31,30,73.02,87.62,2.38,29
+SKU-1099,Laptop Stand,Electronics,2025-10-18,194,133.03,106.42,2.33,3
+SKU-1100,Ergonomic Mouse,Office Supplies,2026-04-07,23,36.71,44.05,4.83,5
+SKU-1101,Puzzle Set,Toys,2026-04-11,19,41.19,49.43,0.74,24
+SKU-1102,Recycled Polyester Jacket,Apparel,2026-02-13,76,80.06,96.07,1.75,32
+SKU-1103,Whiteboard Markers,Office Supplies,2025-11-07,174,52.92,42.34,3.96,14
+SKU-1104,Bamboo Cutting Board,Home & Kitchen,2026-04-04,26,52.07,62.48,4.88,46
+SKU-1105,Bamboo Cutting Board,Home & Kitchen,2025-11-12,169,117.05,93.64,2.79,2
+SKU-1106,Smartphone,Electronics,2026-02-14,75,110.41,132.49,9.83,39
+SKU-1107,Cotton T-Shirt,Apparel,2026-01-04,116,34.83,27.86,2.26,45
+SKU-1108,Canvas Sneakers,Apparel,2026-03-29,32,132.14,158.57,2.58,42
+SKU-1109,Whiteboard Markers,Office Supplies,2026-04-08,22,54.03,64.84,4.99,7
+SKU-1110,Denim Jeans,Apparel,2026-03-12,49,132.19,158.63,2.01,27
+SKU-1111,Wooden Building Blocks,Toys,2026-03-28,33,121.29,145.55,3.43,35
+SKU-1112,Puzzle Set,Toys,2026-03-18,43,110.14,132.17,2.18,18
+SKU-1113,LED Desk Lamp,Home & Kitchen,2025-10-21,191,93.61,74.89,2.92,13
+SKU-1114,Puzzle Set,Toys,2026-01-03,117,119.98,95.98,4.88,5
+SKU-1115,Silicone Spatula,Home & Kitchen,2026-01-09,111,128.43,102.74,1.11,27
+SKU-1116,Smartphone,Electronics,2025-12-20,131,145.54,116.43,12.47,18
+SKU-1117,Denim Jeans,Apparel,2025-12-27,124,147.39,117.91,4.75,30
+SKU-1118,Canvas Sneakers,Apparel,2026-03-26,35,85.66,102.79,4.89,19
+SKU-1119,Recycled Paper Notebook,Office Supplies,2025-10-18,194,138.96,111.17,1.7,21
+SKU-1120,Charging Cable,Electronics,2026-03-04,57,58.87,70.64,2.33,20
+SKU-1121,Smartphone,Electronics,2025-12-18,133,111.02,88.82,6.27,35
+SKU-1122,Laptop Stand,Electronics,2026-03-16,45,99.74,119.69,5.24,14
+SKU-1123,Canvas Sneakers,Apparel,2025-12-05,146,55.83,44.66,1.69,20
+SKU-1124,Recycled Polyester Jacket,Apparel,2025-11-12,169,18.83,15.06,0.71,48
+SKU-1125,Canvas Sneakers,Apparel,2026-01-01,119,130.62,104.5,2.54,19
+SKU-1126,Silicone Spatula,Home & Kitchen,2026-03-18,43,10.25,12.3,2.23,1
+SKU-1127,Wooden Building Blocks,Toys,2026-01-04,116,147.76,118.21,1.74,2
+SKU-1128,Wooden Building Blocks,Toys,2025-12-31,120,89.44,71.55,0.5,42
+SKU-1129,Recycled Polyester Jacket,Apparel,2025-12-03,148,94.08,75.26,1.2,1
+SKU-1130,Cotton T-Shirt,Apparel,2026-03-10,51,129.55,155.46,3.83,26
+SKU-1131,Canvas Sneakers,Apparel,2025-10-16,196,76.42,61.14,1.86,11
+SKU-1132,Ergonomic Mouse,Office Supplies,2026-02-06,83,23.56,28.27,3.55,42
+SKU-1133,Puzzle Set,Toys,2026-03-16,45,30.6,36.72,2.99,33
+SKU-1134,LED Desk Lamp,Home & Kitchen,2026-01-15,105,91.93,73.54,2.54,16
+SKU-1135,Silicone Spatula,Home & Kitchen,2026-01-15,105,84.88,67.9,1.91,25
+SKU-1136,Silicone Spatula,Home & Kitchen,2025-10-21,191,57.36,45.89,3.96,26
+SKU-1137,Smartphone,Electronics,2025-12-24,127,16.38,13.1,4.67,43
+SKU-1138,Wooden Building Blocks,Toys,2025-12-28,123,47.11,37.69,1.1,11
+SKU-1139,Puzzle Set,Toys,2026-03-09,52,96.31,115.57,4.17,28
+SKU-1140,Cotton T-Shirt,Apparel,2026-03-07,54,128.14,153.77,4.24,43
+SKU-1141,LED Desk Lamp,Home & Kitchen,2026-04-12,18,61.7,74.04,3.06,6
+SKU-1142,Whiteboard Markers,Office Supplies,2025-10-24,188,64.03,51.22,2.55,40
+SKU-1143,Puzzle Set,Toys,2026-02-26,63,133.7,160.44,3.91,7
+SKU-1144,Whiteboard Markers,Office Supplies,2025-10-30,182,109.21,87.37,4.84,21
+SKU-1145,Silicone Spatula,Home & Kitchen,2026-01-12,108,76.62,61.3,2.21,42
+SKU-1146,Bamboo Cutting Board,Home & Kitchen,2026-02-28,61,50.79,60.95,2.19,13
+SKU-1147,Smartphone,Electronics,2025-12-10,141,38.07,30.46,6.61,20
+SKU-1148,LED Desk Lamp,Home & Kitchen,2026-04-16,14,69.87,83.84,1.35,37
+SKU-1149,Bluetooth Speaker,Electronics,2025-10-24,188,65.77,52.62,10.68,10
+SKU-1150,Recycled Paper Notebook,Office Supplies,2026-03-22,39,63.78,76.54,2.73,14
+SKU-1151,Silicone Spatula,Home & Kitchen,2025-10-31,181,76.49,61.19,4.67,3
+SKU-1152,LED Desk Lamp,Home & Kitchen,2025-11-30,151,50.08,40.06,2.38,45
+SKU-1153,Silicone Spatula,Home & Kitchen,2025-12-31,120,70.83,56.66,0.67,44
+SKU-1154,Cotton T-Shirt,Apparel,2025-11-02,179,116.67,93.34,3.63,19
+SKU-1155,Denim Jeans,Apparel,2026-03-05,56,38.99,46.79,4.25,18
+SKU-1156,Recycled Paper Notebook,Office Supplies,2025-11-28,153,116.67,93.34,3.91,16
+SKU-1157,Ergonomic Mouse,Office Supplies,2025-10-23,189,148.59,118.87,3.4,33
+SKU-1158,Puzzle Set,Toys,2025-10-31,181,81.34,65.07,0.89,22
+SKU-1159,Denim Jeans,Apparel,2025-10-31,181,140.31,112.25,4.41,17
+SKU-1160,Whiteboard Markers,Office Supplies,2025-12-18,133,142.15,113.72,4.19,18
+SKU-1161,Denim Jeans,Apparel,2025-11-10,171,53.68,42.94,4.39,25
+SKU-1162,Eco-friendly Plush,Toys,2025-11-27,154,67.38,53.9,4.47,12
+SKU-1163,LED Desk Lamp,Home & Kitchen,2025-12-16,135,26.53,21.22,4.44,50
+SKU-1164,Cotton T-Shirt,Apparel,2026-03-12,49,56.12,67.34,4.49,6
+SKU-1165,Wooden Building Blocks,Toys,2025-12-17,134,59.16,47.33,0.9,30
+SKU-1166,LED Desk Lamp,Home & Kitchen,2026-01-20,100,140.05,112.04,2.02,11
+SKU-1167,Recycled Polyester Jacket,Apparel,2026-02-20,69,85.29,102.35,1.59,49
+SKU-1168,Eco-friendly Plush,Toys,2026-02-01,88,133.68,160.42,2.09,6
+SKU-1169,LED Desk Lamp,Home & Kitchen,2025-12-19,132,56.91,45.53,4.56,1
+SKU-1170,Puzzle Set,Toys,2026-02-04,85,101.21,121.45,0.71,39
+SKU-1171,Smartphone,Electronics,2025-11-30,151,51.83,41.46,4.1,14
+SKU-1172,Canvas Sneakers,Apparel,2026-04-12,18,147.21,176.65,3.03,38
+SKU-1173,Ergonomic Mouse,Office Supplies,2025-10-14,198,30.28,24.22,4.46,32
+SKU-1174,Wooden Building Blocks,Toys,2026-01-12,108,110.41,88.33,0.92,27
+SKU-1175,Puzzle Set,Toys,2026-03-07,54,45.69,54.83,2.05,27
+SKU-1176,Laptop Stand,Electronics,2026-04-10,20,128.57,154.28,8.36,15
+SKU-1177,Recycled Polyester Jacket,Apparel,2026-02-19,70,72.26,86.71,2.65,2
+SKU-1178,Denim Jeans,Apparel,2026-04-20,10,87.39,104.87,4.11,24
+SKU-1179,Charging Cable,Electronics,2026-01-24,96,78.47,62.78,8.07,13
+SKU-1180,Bamboo Cutting Board,Home & Kitchen,2026-02-02,87,56.03,67.24,4.89,17
+SKU-1181,Puzzle Set,Toys,2025-12-12,139,134.54,107.63,4.25,33
+SKU-1182,Wooden Building Blocks,Toys,2025-11-03,178,70.26,56.21,3.41,33
+SKU-1183,Ergonomic Mouse,Office Supplies,2026-02-13,76,135.32,162.38,1.3,9
+SKU-1184,Eco-friendly Plush,Toys,2025-10-15,197,46.82,37.46,2.32,37
+SKU-1185,Puzzle Set,Toys,2026-03-11,50,19.29,23.15,4.07,19
+SKU-1186,Canvas Sneakers,Apparel,2026-01-11,109,133.43,106.74,1.86,50
+SKU-1187,Recycled Paper Notebook,Office Supplies,2026-01-03,117,99.59,79.67,4.5,35
+SKU-1188,Wooden Building Blocks,Toys,2026-03-22,39,88.92,106.7,4.98,36
+SKU-1189,Eco-friendly Plush,Toys,2026-02-26,63,136.63,163.96,3.23,44
+SKU-1190,Coffee Mug,Home & Kitchen,2026-01-04,116,80.94,64.75,4.63,39
+SKU-1191,Bluetooth Speaker,Electronics,2026-03-29,32,11.19,13.43,2.69,25
+SKU-1192,Laptop Stand,Electronics,2026-02-19,70,69.21,83.05,4.89,23
+SKU-1193,Coffee Mug,Home & Kitchen,2025-12-24,127,53.23,42.58,0.63,14
+SKU-1194,Smartphone,Electronics,2026-01-13,107,52.82,42.26,6.2,25
+SKU-1195,Laptop Stand,Electronics,2025-10-13,199,47.16,37.73,14.16,18
+SKU-1196,Ergonomic Mouse,Office Supplies,2026-01-06,114,141.65,113.32,1.93,43
+SKU-1197,Puzzle Set,Toys,2026-04-15,15,140.47,168.56,1.37,40
+SKU-1198,Denim Jeans,Apparel,2026-02-08,81,15.05,18.06,4.92,45
+SKU-1199,Wooden Building Blocks,Toys,2026-04-05,25,30.17,36.2,2.57,3
+SKU-1200,Smartphone,Electronics,2026-04-19,11,107.35,128.82,3.53,11
+SKU-1201,Ergonomic Mouse,Office Supplies,2025-10-27,185,42.69,34.15,2.93,32
+SKU-1202,Coffee Mug,Home & Kitchen,2026-04-19,11,10.96,13.15,0.57,3
+SKU-1203,Whiteboard Markers,Office Supplies,2025-11-08,173,10.47,8.38,1.18,24
+SKU-1204,Cotton T-Shirt,Apparel,2026-02-15,74,18.7,22.44,2.36,41
+SKU-1205,Cotton T-Shirt,Apparel,2026-02-15,74,20.82,24.98,3.14,48
+SKU-1206,Puzzle Set,Toys,2025-12-09,142,117.86,94.29,1.86,5
+SKU-1207,Charging Cable,Electronics,2025-11-26,155,26.6,21.28,13.55,22
+SKU-1208,Denim Jeans,Apparel,2026-03-04,57,131.48,157.78,1.31,7
+SKU-1209,Bluetooth Speaker,Electronics,2025-10-27,185,18.69,14.95,4.68,27
+SKU-1210,Whiteboard Markers,Office Supplies,2025-11-02,179,35.64,28.51,4.5,19
+SKU-1211,Bluetooth Speaker,Electronics,2025-10-26,186,130.22,104.18,4.36,47
+SKU-1212,Eco-friendly Plush,Toys,2026-01-13,107,35.96,28.77,1.43,6
+SKU-1213,Smartphone,Electronics,2026-04-09,21,110.78,132.94,12.91,26
+SKU-1214,Canvas Sneakers,Apparel,2026-01-18,102,33.31,26.65,2.47,26
+SKU-1215,Ergonomic Mouse,Office Supplies,2026-03-20,41,63.34,76.01,2.29,45
+SKU-1216,Silicone Spatula,Home & Kitchen,2026-02-16,73,85.08,102.1,3.84,49
+SKU-1217,Recycled Polyester Jacket,Apparel,2026-01-31,89,30.6,36.72,3.12,9
+SKU-1218,Recycled Paper Notebook,Office Supplies,2026-02-23,66,96.46,115.75,5.0,46
+SKU-1219,Puzzle Set,Toys,2026-04-13,17,82.99,99.59,2.17,23
+SKU-1220,Laptop Stand,Electronics,2025-11-07,174,115.87,92.7,10.99,11
+SKU-1221,Whiteboard Markers,Office Supplies,2025-12-18,133,114.27,91.42,0.86,7
+SKU-1222,Ergonomic Mouse,Office Supplies,2026-02-13,76,87.8,105.36,3.47,24
+SKU-1223,Eco-friendly Plush,Toys,2026-01-14,106,98.92,79.14,1.38,8
+SKU-1224,Silicone Spatula,Home & Kitchen,2026-01-04,116,68.32,54.66,3.62,9
+SKU-1225,Silicone Spatula,Home & Kitchen,2026-03-20,41,47.1,56.52,1.44,29
+SKU-1226,Puzzle Set,Toys,2025-10-22,190,91.36,73.09,2.25,42
+SKU-1227,Whiteboard Markers,Office Supplies,2026-01-14,106,127.6,102.08,4.04,25
+SKU-1228,Laptop Stand,Electronics,2026-04-15,15,145.3,174.36,8.48,6
+SKU-1229,Whiteboard Markers,Office Supplies,2026-01-21,99,28.04,22.43,2.82,14
+SKU-1230,Recycled Paper Notebook,Office Supplies,2026-01-04,116,15.14,12.11,2.81,28
+SKU-1231,Charging Cable,Electronics,2026-04-19,11,54.5,65.4,11.97,26
+SKU-1232,Whiteboard Markers,Office Supplies,2026-01-23,97,38.35,30.68,1.36,50
+SKU-1233,Recycled Polyester Jacket,Apparel,2025-11-03,178,78.94,63.15,1.66,18
+SKU-1234,Whiteboard Markers,Office Supplies,2026-02-13,76,18.14,21.77,1.91,41
+SKU-1235,Smartphone,Electronics,2026-03-09,52,30.77,36.92,10.04,44
+SKU-1236,Eco-friendly Plush,Toys,2026-01-17,103,120.76,96.61,1.31,43
+SKU-1237,Bluetooth Speaker,Electronics,2026-03-24,37,70.32,84.38,6.29,1
+SKU-1238,Whiteboard Markers,Office Supplies,2025-10-29,183,22.2,17.76,4.77,48
+SKU-1239,Recycled Polyester Jacket,Apparel,2026-02-06,83,110.0,132.0,2.54,31
+SKU-1240,Ergonomic Mouse,Office Supplies,2026-03-12,49,26.52,31.82,3.94,1
+SKU-1241,Smartphone,Electronics,2025-12-04,147,149.17,119.34,13.93,10
+SKU-1242,Charging Cable,Electronics,2025-10-28,184,81.63,65.3,4.41,38
+SKU-1243,Ergonomic Mouse,Office Supplies,2026-02-23,66,94.9,113.88,1.51,36
+SKU-1244,Coffee Mug,Home & Kitchen,2026-02-09,80,85.55,102.66,4.02,3
+SKU-1245,Recycled Paper Notebook,Office Supplies,2026-03-20,41,13.76,16.51,3.24,49
+SKU-1246,Ergonomic Mouse,Office Supplies,2025-11-13,168,83.36,66.69,1.7,25
+SKU-1247,Puzzle Set,Toys,2025-11-21,160,130.14,104.11,4.03,10
+SKU-1248,Wooden Building Blocks,Toys,2025-10-24,188,115.16,92.13,4.51,6
+SKU-1249,Coffee Mug,Home & Kitchen,2026-03-16,45,132.25,158.7,3.57,26
+SKU-1250,Recycled Paper Notebook,Office Supplies,2026-04-10,20,44.1,52.92,4.3,4
+SKU-1251,Bamboo Cutting Board,Home & Kitchen,2025-11-16,165,113.51,90.81,2.98,29
+SKU-1252,Charging Cable,Electronics,2025-12-07,144,71.8,57.44,10.27,10
+SKU-1253,Recycled Polyester Jacket,Apparel,2026-02-05,84,146.08,175.3,3.4,41
+SKU-1254,Laptop Stand,Electronics,2026-02-21,68,141.9,170.28,14.29,33
+SKU-1255,Whiteboard Markers,Office Supplies,2026-02-25,64,26.2,31.44,2.86,32
+SKU-1256,Canvas Sneakers,Apparel,2026-01-20,100,111.84,89.47,2.85,1
+SKU-1257,Recycled Paper Notebook,Office Supplies,2025-11-17,164,32.57,26.06,0.53,40
+SKU-1258,Recycled Paper Notebook,Office Supplies,2026-03-11,50,59.04,70.85,4.91,40
+SKU-1259,Recycled Polyester Jacket,Apparel,2026-03-09,52,53.5,64.2,2.46,16
+SKU-1260,Smartphone,Electronics,2026-03-05,56,100.66,120.79,10.9,23
+SKU-1261,Eco-friendly Plush,Toys,2025-12-15,136,58.06,46.45,2.66,29
+SKU-1262,LED Desk Lamp,Home & Kitchen,2026-01-06,114,119.92,95.94,2.97,49
+SKU-1263,Coffee Mug,Home & Kitchen,2026-01-05,115,63.39,50.71,4.08,41
+SKU-1264,LED Desk Lamp,Home & Kitchen,2025-11-10,171,13.29,10.63,1.6,44
+SKU-1265,LED Desk Lamp,Home & Kitchen,2026-04-08,22,19.93,23.92,2.18,8
+SKU-1266,Canvas Sneakers,Apparel,2025-10-23,189,124.21,99.37,4.16,17
+SKU-1267,Silicone Spatula,Home & Kitchen,2026-03-09,52,16.67,20.0,4.38,49
+SKU-1268,Canvas Sneakers,Apparel,2025-11-06,175,22.87,18.3,3.02,34
+SKU-1269,Eco-friendly Plush,Toys,2025-12-02,149,66.74,53.39,3.11,7
+SKU-1270,Smartphone,Electronics,2026-01-18,102,77.45,61.96,6.1,39
+SKU-1271,Denim Jeans,Apparel,2026-02-23,66,111.36,133.63,2.48,14
+SKU-1272,Charging Cable,Electronics,2026-02-10,79,103.83,124.6,7.07,5
+SKU-1273,Whiteboard Markers,Office Supplies,2026-04-20,10,112.7,135.24,2.91,36
+SKU-1274,Puzzle Set,Toys,2025-10-31,181,133.95,107.16,4.49,15
+SKU-1275,Laptop Stand,Electronics,2025-10-20,192,74.28,59.42,10.01,19
+SKU-1276,LED Desk Lamp,Home & Kitchen,2025-11-03,178,23.0,18.4,4.28,42
+SKU-1277,Bluetooth Speaker,Electronics,2026-04-06,24,77.38,92.86,4.72,6
+SKU-1278,Charging Cable,Electronics,2025-11-01,180,56.53,45.22,13.79,46
+SKU-1279,Eco-friendly Plush,Toys,2026-01-04,116,42.54,34.03,3.75,34
+SKU-1280,Bamboo Cutting Board,Home & Kitchen,2025-11-09,172,88.0,70.4,4.66,11
+SKU-1281,Cotton T-Shirt,Apparel,2025-11-28,153,51.67,41.34,1.12,36
+SKU-1282,Wooden Building Blocks,Toys,2026-01-17,103,146.78,117.42,3.93,24
+SKU-1283,Laptop Stand,Electronics,2026-03-16,45,139.98,167.98,4.57,24
+SKU-1284,Eco-friendly Plush,Toys,2025-11-08,173,140.42,112.34,1.48,28
+SKU-1285,Canvas Sneakers,Apparel,2025-10-21,191,133.84,107.07,2.75,26
+SKU-1286,Wooden Building Blocks,Toys,2025-12-18,133,21.62,17.3,4.1,27
+SKU-1287,Smartphone,Electronics,2026-04-14,16,101.76,122.11,8.39,29
+SKU-1288,Puzzle Set,Toys,2026-02-09,80,132.87,159.44,1.23,40
+SKU-1289,LED Desk Lamp,Home & Kitchen,2026-02-22,67,51.83,62.2,1.19,2
+SKU-1290,Whiteboard Markers,Office Supplies,2025-11-25,156,13.63,10.9,0.75,16
+SKU-1291,Eco-friendly Plush,Toys,2025-11-15,166,92.33,73.86,1.54,18
+SKU-1292,Cotton T-Shirt,Apparel,2026-02-12,77,97.74,117.29,0.74,21
+SKU-1293,Wooden Building Blocks,Toys,2026-01-02,118,111.54,89.23,2.71,1
+SKU-1294,LED Desk Lamp,Home & Kitchen,2026-02-23,66,45.81,54.97,4.3,5
+SKU-1295,Recycled Paper Notebook,Office Supplies,2026-04-17,13,62.41,74.89,3.37,15
+SKU-1296,Recycled Paper Notebook,Office Supplies,2025-11-08,173,144.54,115.63,3.86,1
+SKU-1297,Denim Jeans,Apparel,2026-02-14,75,89.19,107.03,2.74,3
+SKU-1298,Charging Cable,Electronics,2026-04-19,11,46.68,56.02,5.92,46
+SKU-1299,Recycled Polyester Jacket,Apparel,2026-02-01,88,105.66,126.79,2.7,9
+SKU-1300,Puzzle Set,Toys,2026-03-20,41,11.71,14.05,1.05,43
+SKU-1301,Recycled Paper Notebook,Office Supplies,2026-03-07,54,58.13,69.76,3.98,30
+SKU-1302,Ergonomic Mouse,Office Supplies,2025-11-12,169,136.93,109.54,1.67,43
+SKU-1303,LED Desk Lamp,Home & Kitchen,2025-11-26,155,98.28,78.62,2.06,48
+SKU-1304,Silicone Spatula,Home & Kitchen,2026-03-30,31,115.81,138.97,4.14,46
+SKU-1305,Ergonomic Mouse,Office Supplies,2026-01-19,101,21.95,17.56,4.91,11
+SKU-1306,Bluetooth Speaker,Electronics,2026-02-20,69,107.08,128.5,14.41,14
+SKU-1307,Ergonomic Mouse,Office Supplies,2026-02-22,67,115.54,138.65,3.47,9
+SKU-1308,Bluetooth Speaker,Electronics,2025-11-28,153,39.09,31.27,12.58,21
+SKU-1309,Smartphone,Electronics,2026-04-17,13,149.8,179.76,13.46,10
+SKU-1310,Bamboo Cutting Board,Home & Kitchen,2026-03-05,56,78.7,94.44,2.91,20
+SKU-1311,Charging Cable,Electronics,2026-01-04,116,98.29,78.63,7.11,9
+SKU-1312,Smartphone,Electronics,2025-12-12,139,43.83,35.06,2.31,41
+SKU-1313,LED Desk Lamp,Home & Kitchen,2026-04-09,21,125.61,150.73,2.81,21
+SKU-1314,Denim Jeans,Apparel,2026-04-02,28,141.45,169.74,3.15,34
+SKU-1315,Wooden Building Blocks,Toys,2026-02-04,85,112.74,135.29,3.61,13
+SKU-1316,Denim Jeans,Apparel,2026-02-05,84,16.91,20.29,3.76,12
+SKU-1317,Bluetooth Speaker,Electronics,2025-10-17,195,137.84,110.27,8.8,31
+SKU-1318,Recycled Paper Notebook,Office Supplies,2026-02-10,79,86.59,103.91,4.58,11
+SKU-1319,Recycled Polyester Jacket,Apparel,2025-11-10,171,68.84,55.07,4.67,17
+SKU-1320,Puzzle Set,Toys,2026-02-28,61,67.56,81.07,2.71,32
+SKU-1321,Whiteboard Markers,Office Supplies,2026-02-28,61,74.95,89.94,1.33,21
+SKU-1322,Eco-friendly Plush,Toys,2025-12-20,131,118.15,94.52,4.85,40
+SKU-1323,Bluetooth Speaker,Electronics,2026-04-14,16,114.4,137.28,3.09,35
+SKU-1324,Recycled Paper Notebook,Office Supplies,2026-01-31,89,136.77,164.12,2.94,9
+SKU-1325,Whiteboard Markers,Office Supplies,2026-01-10,110,119.35,95.48,2.62,3
+SKU-1326,Recycled Paper Notebook,Office Supplies,2026-04-05,25,143.98,172.78,2.81,8
+SKU-1327,Silicone Spatula,Home & Kitchen,2025-10-30,182,99.04,79.23,1.36,14
+SKU-1328,Whiteboard Markers,Office Supplies,2026-01-23,97,106.37,85.1,3.18,26
+SKU-1329,Charging Cable,Electronics,2026-04-13,17,48.92,58.7,4.03,22
+SKU-1330,Canvas Sneakers,Apparel,2025-12-09,142,119.7,95.76,3.24,40
+SKU-1331,Canvas Sneakers,Apparel,2025-12-18,133,12.24,9.79,3.41,1
+SKU-1332,Coffee Mug,Home & Kitchen,2025-10-13,199,121.87,97.5,0.76,8
+SKU-1333,Canvas Sneakers,Apparel,2025-12-23,128,123.26,98.61,0.97,39
+SKU-1334,Charging Cable,Electronics,2026-01-01,119,85.08,68.06,3.69,5
+SKU-1335,Eco-friendly Plush,Toys,2025-10-27,185,138.73,110.98,3.96,31
+SKU-1336,Laptop Stand,Electronics,2026-03-30,31,10.25,12.3,3.9,19
+SKU-1337,Coffee Mug,Home & Kitchen,2025-11-22,159,127.61,102.09,1.34,43
+SKU-1338,Whiteboard Markers,Office Supplies,2026-02-22,67,13.72,16.46,2.57,49
+SKU-1339,LED Desk Lamp,Home & Kitchen,2025-10-22,190,66.19,52.95,2.25,49
+SKU-1340,Whiteboard Markers,Office Supplies,2026-04-14,16,30.6,36.72,2.74,25
+SKU-1341,Eco-friendly Plush,Toys,2025-12-04,147,11.29,9.03,4.51,11
+SKU-1342,Recycled Polyester Jacket,Apparel,2026-03-13,48,52.69,63.23,1.83,13
+SKU-1343,Cotton T-Shirt,Apparel,2026-01-26,94,76.61,61.29,0.52,24
+SKU-1344,Recycled Paper Notebook,Office Supplies,2026-03-13,48,98.51,118.21,4.17,50
+SKU-1345,Whiteboard Markers,Office Supplies,2025-11-26,155,53.09,42.47,2.02,11
+SKU-1346,Coffee Mug,Home & Kitchen,2026-01-06,114,52.45,41.96,3.04,18
+SKU-1347,LED Desk Lamp,Home & Kitchen,2026-04-16,14,104.42,125.3,3.8,13
+SKU-1348,Eco-friendly Plush,Toys,2026-01-08,112,82.86,66.29,3.96,20
+SKU-1349,Ergonomic Mouse,Office Supplies,2026-02-26,63,39.1,46.92,4.73,15
+SKU-1350,Wooden Building Blocks,Toys,2025-12-20,131,77.53,62.02,4.65,12
+SKU-1351,Coffee Mug,Home & Kitchen,2025-12-08,143,123.47,98.78,3.66,43
+SKU-1352,Laptop Stand,Electronics,2025-12-10,141,73.33,58.66,13.64,48
+SKU-1353,Eco-friendly Plush,Toys,2026-03-15,46,116.02,139.22,1.27,9
+SKU-1354,Canvas Sneakers,Apparel,2026-01-29,91,144.05,115.24,2.57,31
+SKU-1355,Laptop Stand,Electronics,2025-12-09,142,136.79,109.43,4.7,49
+SKU-1356,Whiteboard Markers,Office Supplies,2025-10-15,197,149.38,119.5,0.87,13
+SKU-1357,Wooden Building Blocks,Toys,2026-01-15,105,57.83,46.26,2.53,40
+SKU-1358,Charging Cable,Electronics,2026-03-26,35,69.97,83.96,8.01,25
+SKU-1359,Laptop Stand,Electronics,2025-11-02,179,125.59,100.47,5.16,29
+SKU-1360,Coffee Mug,Home & Kitchen,2025-12-18,133,145.65,116.52,4.5,46
+SKU-1361,Wooden Building Blocks,Toys,2026-03-11,50,89.78,107.74,3.36,25
+SKU-1362,Wooden Building Blocks,Toys,2025-12-01,150,84.05,67.24,1.16,21
+SKU-1363,Recycled Polyester Jacket,Apparel,2026-03-10,51,13.32,15.98,0.62,29
+SKU-1364,Wooden Building Blocks,Toys,2025-10-12,200,138.61,110.89,1.71,40
+SKU-1365,Coffee Mug,Home & Kitchen,2026-01-05,115,94.94,75.95,4.41,35
+SKU-1366,Canvas Sneakers,Apparel,2026-03-06,55,27.88,33.46,2.02,5
+SKU-1367,Denim Jeans,Apparel,2025-11-23,158,60.36,48.29,1.9,40
+SKU-1368,Denim Jeans,Apparel,2025-12-11,140,72.4,57.92,1.7,25
+SKU-1369,Whiteboard Markers,Office Supplies,2025-11-21,160,76.76,61.41,3.13,12
+SKU-1370,Canvas Sneakers,Apparel,2025-12-02,149,129.22,103.38,1.69,3
+SKU-1371,Denim Jeans,Apparel,2026-01-28,92,133.92,107.14,2.04,35
+SKU-1372,LED Desk Lamp,Home & Kitchen,2026-01-03,117,70.57,56.46,0.52,24
+SKU-1373,Wooden Building Blocks,Toys,2026-02-18,71,82.16,98.59,0.86,4
+SKU-1374,Ergonomic Mouse,Office Supplies,2025-12-11,140,15.59,12.47,2.44,48
+SKU-1375,Recycled Paper Notebook,Office Supplies,2026-01-06,114,37.0,29.6,0.88,25
+SKU-1376,Silicone Spatula,Home & Kitchen,2026-02-18,71,41.91,50.29,4.42,45
+SKU-1377,Silicone Spatula,Home & Kitchen,2026-03-01,60,95.39,114.47,2.77,40
+SKU-1378,Bluetooth Speaker,Electronics,2026-01-29,91,117.53,94.02,6.29,4
+SKU-1379,LED Desk Lamp,Home & Kitchen,2026-02-26,63,105.43,126.52,2.68,26
+SKU-1380,Eco-friendly Plush,Toys,2025-12-30,121,141.76,113.41,1.55,47
+SKU-1381,Coffee Mug,Home & Kitchen,2026-02-22,67,131.79,158.15,1.3,19
+SKU-1382,Canvas Sneakers,Apparel,2025-11-16,165,81.11,64.89,4.33,19
+SKU-1383,Bamboo Cutting Board,Home & Kitchen,2026-01-15,105,102.93,82.34,2.91,43
+SKU-1384,Silicone Spatula,Home & Kitchen,2026-01-07,113,146.72,117.38,4.64,37
+SKU-1385,Bluetooth Speaker,Electronics,2026-01-18,102,84.64,67.71,13.04,38
+SKU-1386,Wooden Building Blocks,Toys,2026-03-09,52,29.34,35.21,2.43,41
+SKU-1387,Canvas Sneakers,Apparel,2026-03-12,49,71.33,85.6,3.09,25
+SKU-1388,Charging Cable,Electronics,2026-02-07,82,15.26,18.31,10.5,29
+SKU-1389,Whiteboard Markers,Office Supplies,2026-04-18,12,40.75,48.9,4.65,17
+SKU-1390,Wooden Building Blocks,Toys,2025-12-04,147,16.21,12.97,4.75,4
+SKU-1391,Bamboo Cutting Board,Home & Kitchen,2026-02-28,61,48.56,58.27,0.86,39
+SKU-1392,Canvas Sneakers,Apparel,2026-04-04,26,19.18,23.02,4.91,7
+SKU-1393,Cotton T-Shirt,Apparel,2026-04-11,19,26.52,31.82,3.32,4
+SKU-1394,Puzzle Set,Toys,2026-03-22,39,140.69,168.83,1.17,12
+SKU-1395,Silicone Spatula,Home & Kitchen,2025-12-03,148,56.57,45.26,2.7,2
+SKU-1396,Wooden Building Blocks,Toys,2026-03-19,42,53.27,63.92,0.66,15
+SKU-1397,Smartphone,Electronics,2025-11-30,151,21.68,17.34,2.17,1
+SKU-1398,Silicone Spatula,Home & Kitchen,2026-02-15,74,68.89,82.67,1.58,36
+SKU-1399,Canvas Sneakers,Apparel,2026-01-06,114,61.84,49.47,0.79,39
+SKU-1400,Laptop Stand,Electronics,2026-04-01,29,30.28,36.34,9.86,26
+SKU-1401,Bamboo Cutting Board,Home & Kitchen,2026-04-04,26,128.13,153.76,1.74,42
+SKU-1402,Recycled Paper Notebook,Office Supplies,2025-12-06,145,54.53,43.62,1.65,5
+SKU-1403,Ergonomic Mouse,Office Supplies,2025-11-05,176,128.32,102.66,4.9,45
+SKU-1404,Denim Jeans,Apparel,2026-02-10,79,20.23,24.28,2.59,24
+SKU-1405,Wooden Building Blocks,Toys,2026-01-25,95,23.53,18.82,3.84,4
+SKU-1406,LED Desk Lamp,Home & Kitchen,2025-12-27,124,51.5,41.2,4.01,29
+SKU-1407,Wooden Building Blocks,Toys,2025-12-30,121,86.73,69.38,1.67,19
+SKU-1408,Wooden Building Blocks,Toys,2025-10-20,192,143.01,114.41,3.9,27
+SKU-1409,Puzzle Set,Toys,2026-03-12,49,137.37,164.84,4.5,30
+SKU-1410,Bamboo Cutting Board,Home & Kitchen,2026-04-17,13,89.78,107.74,4.41,46
+SKU-1411,Smartphone,Electronics,2026-03-03,58,53.35,64.02,5.15,16
+SKU-1412,Canvas Sneakers,Apparel,2026-03-02,59,34.71,41.65,4.8,49
+SKU-1413,LED Desk Lamp,Home & Kitchen,2025-11-17,164,80.97,64.78,3.63,46
+SKU-1414,Coffee Mug,Home & Kitchen,2026-03-04,57,111.33,133.6,3.25,5
+SKU-1415,Smartphone,Electronics,2025-12-08,143,58.95,47.16,11.15,13
+SKU-1416,Puzzle Set,Toys,2026-03-02,59,11.75,14.1,1.67,49
+SKU-1417,Wooden Building Blocks,Toys,2026-01-01,119,131.06,104.85,1.11,38
+SKU-1418,Puzzle Set,Toys,2025-12-04,147,52.35,41.88,4.31,19
+SKU-1419,LED Desk Lamp,Home & Kitchen,2026-03-14,47,45.82,54.98,0.51,10
+SKU-1420,Eco-friendly Plush,Toys,2026-03-05,56,19.5,23.4,1.7,34
+SKU-1421,Ergonomic Mouse,Office Supplies,2026-03-07,54,23.25,27.9,3.52,39
+SKU-1422,Cotton T-Shirt,Apparel,2026-02-15,74,54.2,65.04,3.53,36
+SKU-1423,Wooden Building Blocks,Toys,2025-11-02,179,22.96,18.37,2.32,47
+SKU-1424,LED Desk Lamp,Home & Kitchen,2026-01-22,98,119.1,95.28,1.9,49
+SKU-1425,Bluetooth Speaker,Electronics,2025-10-30,182,71.21,56.97,14.85,17
+SKU-1426,Charging Cable,Electronics,2025-11-02,179,66.73,53.38,11.95,18
+SKU-1427,Recycled Polyester Jacket,Apparel,2026-03-07,54,145.13,174.16,1.82,19
+SKU-1428,Whiteboard Markers,Office Supplies,2026-03-01,60,47.57,57.08,1.01,33
+SKU-1429,Whiteboard Markers,Office Supplies,2026-02-03,86,14.87,17.84,4.61,21
+SKU-1430,Denim Jeans,Apparel,2026-02-28,61,43.09,51.71,2.05,21
+SKU-1431,Recycled Polyester Jacket,Apparel,2026-03-27,34,68.05,81.66,3.97,26
+SKU-1432,LED Desk Lamp,Home & Kitchen,2026-01-16,104,103.27,82.62,1.96,13
+SKU-1433,Puzzle Set,Toys,2026-03-09,52,46.39,55.67,4.3,45
+SKU-1434,Recycled Polyester Jacket,Apparel,2026-02-02,87,15.08,18.1,4.26,46
+SKU-1435,Eco-friendly Plush,Toys,2026-04-10,20,43.67,52.4,4.21,38
+SKU-1436,Puzzle Set,Toys,2026-01-14,106,101.63,81.3,4.75,15
+SKU-1437,Puzzle Set,Toys,2026-02-16,73,16.66,19.99,1.27,42
+SKU-1438,Puzzle Set,Toys,2025-12-04,147,84.56,67.65,2.87,2
+SKU-1439,Bamboo Cutting Board,Home & Kitchen,2026-04-02,28,44.33,53.2,3.88,27
+SKU-1440,Recycled Paper Notebook,Office Supplies,2025-12-29,122,79.35,63.48,1.38,7
+SKU-1441,Eco-friendly Plush,Toys,2026-04-10,20,33.83,40.6,2.16,49
+SKU-1442,Puzzle Set,Toys,2025-11-01,180,146.62,117.3,1.35,41
+SKU-1443,Canvas Sneakers,Apparel,2026-02-25,64,24.72,29.66,2.65,29
+SKU-1444,Whiteboard Markers,Office Supplies,2025-12-17,134,102.18,81.74,4.89,15
+SKU-1445,Recycled Paper Notebook,Office Supplies,2026-02-02,87,95.84,115.01,4.69,50
+SKU-1446,Laptop Stand,Electronics,2026-02-27,62,63.43,76.12,9.22,48
+SKU-1447,Ergonomic Mouse,Office Supplies,2025-10-26,186,36.64,29.31,2.46,11
+SKU-1448,Whiteboard Markers,Office Supplies,2025-10-18,194,58.95,47.16,0.7,41
+SKU-1449,Canvas Sneakers,Apparel,2025-12-13,138,45.25,36.2,4.48,21
+SKU-1450,Puzzle Set,Toys,2026-02-10,79,48.88,58.66,1.77,10
+SKU-1451,Recycled Polyester Jacket,Apparel,2026-02-27,62,89.46,107.35,0.94,18
+SKU-1452,Recycled Polyester Jacket,Apparel,2025-11-29,152,127.86,102.29,1.71,37
+SKU-1453,Eco-friendly Plush,Toys,2026-02-09,80,131.35,157.62,4.87,44
+SKU-1454,Eco-friendly Plush,Toys,2026-01-03,117,14.22,11.38,0.55,17
+SKU-1455,Recycled Polyester Jacket,Apparel,2025-12-10,141,33.98,27.18,1.26,35
+SKU-1456,Eco-friendly Plush,Toys,2026-02-08,81,118.18,141.82,4.62,4
+SKU-1457,Eco-friendly Plush,Toys,2026-04-20,10,126.55,151.86,3.17,33
+SKU-1458,Bluetooth Speaker,Electronics,2025-10-20,192,29.22,23.38,10.08,28
+SKU-1459,Laptop Stand,Electronics,2025-12-23,128,69.91,55.93,6.69,36
+SKU-1460,Coffee Mug,Home & Kitchen,2025-12-09,142,141.33,113.06,1.21,39
+SKU-1461,Coffee Mug,Home & Kitchen,2026-03-15,46,141.33,169.6,3.2,3
+SKU-1462,Cotton T-Shirt,Apparel,2026-02-25,64,65.08,78.1,4.45,15
+SKU-1463,Smartphone,Electronics,2025-10-21,191,46.08,36.86,12.52,47
+SKU-1464,Recycled Paper Notebook,Office Supplies,2025-12-31,120,127.15,101.72,4.78,18
+SKU-1465,Cotton T-Shirt,Apparel,2025-12-30,121,74.01,59.21,1.34,44
+SKU-1466,Whiteboard Markers,Office Supplies,2025-12-08,143,18.51,14.81,0.94,29
+SKU-1467,Canvas Sneakers,Apparel,2026-01-05,115,113.76,91.01,4.01,19
+SKU-1468,Cotton T-Shirt,Apparel,2026-02-14,75,52.47,62.96,4.0,21
+SKU-1469,Wooden Building Blocks,Toys,2026-03-23,38,104.75,125.7,1.94,36
+SKU-1470,Cotton T-Shirt,Apparel,2025-11-17,164,72.94,58.35,3.5,8
+SKU-1471,Bamboo Cutting Board,Home & Kitchen,2025-11-06,175,137.49,109.99,2.28,28
+SKU-1472,Recycled Polyester Jacket,Apparel,2026-04-17,13,56.84,68.21,3.5,39
+SKU-1473,Smartphone,Electronics,2026-02-19,70,89.54,107.45,8.12,14
+SKU-1474,Eco-friendly Plush,Toys,2026-04-16,14,103.99,124.79,0.82,22
+SKU-1475,Puzzle Set,Toys,2026-03-10,51,126.89,152.27,2.07,43
+SKU-1476,Wooden Building Blocks,Toys,2026-01-27,93,122.19,97.75,3.69,18
+SKU-1477,Laptop Stand,Electronics,2025-12-01,150,81.73,65.38,11.46,8
+SKU-1478,Puzzle Set,Toys,2026-04-03,27,86.72,104.06,1.24,16
+SKU-1479,Wooden Building Blocks,Toys,2026-02-27,62,86.67,104.0,0.79,1
+SKU-1480,Laptop Stand,Electronics,2025-12-17,134,147.72,118.18,6.9,30
+SKU-1481,Coffee Mug,Home & Kitchen,2025-10-18,194,62.12,49.7,2.68,43
+SKU-1482,Puzzle Set,Toys,2025-12-01,150,68.87,55.1,4.0,34
+SKU-1483,Coffee Mug,Home & Kitchen,2026-02-20,69,50.68,60.82,3.01,37
+SKU-1484,Puzzle Set,Toys,2026-01-05,115,108.87,87.1,0.72,5
+SKU-1485,Bamboo Cutting Board,Home & Kitchen,2026-02-10,79,93.5,112.2,4.79,24
+SKU-1486,Silicone Spatula,Home & Kitchen,2025-11-07,174,118.39,94.71,4.24,9
+SKU-1487,Cotton T-Shirt,Apparel,2026-02-27,62,29.78,35.74,4.72,28
+SKU-1488,LED Desk Lamp,Home & Kitchen,2026-03-13,48,21.52,25.82,4.9,24
+SKU-1489,Canvas Sneakers,Apparel,2026-01-17,103,98.07,78.46,1.05,39
+SKU-1490,Bamboo Cutting Board,Home & Kitchen,2025-11-17,164,108.51,86.81,3.01,17
+SKU-1491,Canvas Sneakers,Apparel,2026-02-01,88,61.57,73.88,3.71,50
+SKU-1492,Coffee Mug,Home & Kitchen,2026-03-04,57,101.02,121.22,0.88,39
+SKU-1493,Whiteboard Markers,Office Supplies,2025-11-26,155,36.33,29.06,2.58,10
+SKU-1494,Coffee Mug,Home & Kitchen,2025-11-05,176,16.85,13.48,1.71,15
+SKU-1495,Cotton T-Shirt,Apparel,2026-01-30,90,34.5,27.6,4.54,10
+SKU-1496,Silicone Spatula,Home & Kitchen,2025-10-27,185,86.07,68.86,3.69,47
+SKU-1497,Ergonomic Mouse,Office Supplies,2025-12-18,133,19.0,15.2,4.05,39
+SKU-1498,Wooden Building Blocks,Toys,2025-12-25,126,95.4,76.32,3.58,4
+SKU-1499,Cotton T-Shirt,Apparel,2025-10-29,183,15.51,12.41,3.83,13
