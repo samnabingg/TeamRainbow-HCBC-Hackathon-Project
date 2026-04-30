@@ -4,20 +4,25 @@ from groq import Groq
 from dotenv import load_dotenv
 
 load_dotenv()
-
 client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
 def process_item(item):
+    # Updated prompt to match 'real_inventory_data.csv' columns
+    # Added 'waste_footprint_kg' to leverage the 'Eco' aspect in descriptions
     prompt = f"""
-    You are an AI agent helping liquidate overstock inventory.
+    You are an AI agent specializing in Eco-Arbitrage and inventory recovery.
+    Your goal is to liquidate dead stock while highlighting its environmental value.
 
-    Item: {item['Item Name']}
-    Original Price: {item['Original Price']}
+    Item: {item['product_name']}
+    Category: {item['category']}
+    Original Cost: ${item['original_cost_usd']}
+    Inventory Age: {item['inventory_age_days']} days
+    Waste Footprint: {item['waste_footprint_kg']}kg (CO2e/Waste prevented by reselling)
 
     Tasks:
-    1. Classify urgency (high, medium, low)
-    2. Suggest resale price for quick sale
-    3. Write a 2-sentence product description
+    1. Classify liquidation urgency (high, medium, low) based on age.
+    2. Suggest a competitive resale price.
+    3. Write a 2-sentence description focusing on the item's quality and the eco-benefit of buying it instead of it going to a landfill.
 
     Return ONLY valid JSON:
     {{
@@ -26,29 +31,35 @@ def process_item(item):
         "description": "text"
     }}
     """
-
-    response = client.chat.completions.create(
-        model="llama-3.3-70b-versatile",
-        messages=[{"role": "user", "content": prompt}],
-        temperature=0.7,
-    )
-
-    content = response.choices[0].message.content
-
-    try:
-        return json.loads(content)
-    except:
-        return {
-            "urgency": "unknown",
-            "resale_price": 0,
-            "description": content
-        }
     
-if __name__ == "__main__":
-    test_item = {
-        "Item Name": "Denim Jacket",
-        "Original Price": 80
-    }
+    try:
+        response = client.chat.completions.create(
+            model="llama-3.3-70b-versatile",
+            messages=[{"role": "user", "content": prompt}],
+            temperature=0.7,
+            # Ensuring the model returns a valid JSON object
+            response_format={"type": "json_object"}
+        )
+        
+        content = response.choices[0].message.content
+        return json.loads(content)
+    
+    except Exception as e:
+        # Fallback if the API fails or JSON is malformed
+        return {
+            "urgency": "medium",
+            "resale_price": round(item['original_cost_usd'] * 0.7, 2),
+            "description": f"Great {item['product_name']} looking for a new home to reduce waste."
+        }
 
+if __name__ == "__main__":
+    # Test with new data format
+    test_item = {
+        "product_name": "Recycled Polyester Jacket",
+        "category": "Apparel",
+        "original_cost_usd": 120.0,
+        "inventory_age_days": 110,
+        "waste_footprint_kg": 4.5
+    }
     result = process_item(test_item)
-    print(result)
+    print(json.dumps(result, indent=2))
