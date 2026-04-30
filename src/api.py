@@ -17,6 +17,7 @@ from fastapi.responses import FileResponse
 
 # Import the AI agent
 from agent import process_item
+from scraper import scrape
 
 
 # Lifespan context manager for startup/shutdown events
@@ -306,7 +307,37 @@ def optimize_single_item(item: Dict[str, Any]):
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
+@app.post("/scrape")
+async def scrape_and_load(
+    source: str = Query(..., description="amazon | ebay | etsy"),
+    keyword: str = Query(..., description="Search keyword"),
+    pages: int = Query(2, ge=1, le=5)
+):
+    global _df, _default_csv_path
 
+    try:
+        df = scrape(source, keyword, pages)
+
+        if df.empty:
+            raise HTTPException(status_code=400, detail="No results found. Try a different keyword.")
+
+        # Save and reload
+        output_path = os.path.join(os.path.dirname(__file__), "data.csv")
+        df.to_csv(output_path, index=False)
+        _df = df
+        _default_csv_path = output_path
+
+        return {
+            "success": True,
+            "source": source,
+            "keyword": keyword,
+            "row_count": len(df)
+        }
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Scraping failed: {str(e)}")
+    
 @app.post("/upload")
 async def upload_csv(file: UploadFile = File(...)):
     """

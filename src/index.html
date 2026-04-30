@@ -680,6 +680,28 @@
     .kpi-row { grid-template-columns: repeat(2, 1fr); }
     .result-row { grid-template-columns: 1fr 1fr; }
   }
+
+  .market-btn {
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  padding: 10px 6px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.15s;
+  background: var(--white);
+  color: var(--text-secondary);
+}
+
+.market-btn:hover {
+  border-color: var(--accent);
+  background: var(--accent-light);
+}
+
+.market-btn.active {
+  border-color: var(--accent);
+  background: var(--accent-light);
+  color: var(--text);
+}
 </style>
 </head>
 <body>
@@ -712,50 +734,93 @@
 <div class="app-body">
 
   <!-- SIDEBAR -->
-  <aside class="sidebar">
+ <aside class="sidebar">
 
-    <div class="sidebar-widget">
-      <div class="sidebar-widget-title">🔍 Search & Filter</div>
+  <!-- SEARCH & FILTER -->
+  <div class="sidebar-widget">
+    <div class="sidebar-widget-title">🔍 Search & Filter</div>
 
-      <div style="margin-bottom:14px">
-        <label class="control-label">Search Products</label>
-        <input class="search-box" type="text" id="search-input" placeholder="Search by product name..." />
+    <div style="margin-bottom:14px">
+      <label class="control-label">Search Products</label>
+      <input class="search-box" type="text" id="search-input" placeholder="Search by product name..." />
+    </div>
+
+    <div style="margin-bottom:14px">
+      <label class="control-label">Min. Inventory Age <span id="age-display-inline">90 days</span></label>
+      <div class="age-display"><span id="age-display">90</span> <small>days old</small></div>
+      <input type="range" id="age-slider" min="0" max="300" value="90" step="5" />
+      <div class="range-labels"><span>0d</span><span>150d</span><span>300d</span></div>
+    </div>
+
+    <div>
+      <label class="control-label">Filter by Category</label>
+      <div class="category-list" id="category-list">
+        <div style="padding:8px;color:var(--text-muted);font-size:12px">Loading<span class="loading-dots"></span></div>
       </div>
+    </div>
+  </div>  <!-- ← closes Search & Filter -->
 
-      <div style="margin-bottom:14px">
-        <label class="control-label">Min. Inventory Age <span id="age-display-inline">90 days</span></label>
-        <div class="age-display"><span id="age-display">90</span> <small>days old</small></div>
-        <input type="range" id="age-slider" min="0" max="300" value="90" step="5" />
-        <div class="range-labels"><span>0d</span><span>150d</span><span>300d</span></div>
-      </div>
+  <!-- SCRAPE MARKETPLACE -->
+  <div class="sidebar-widget">
+    <div class="sidebar-widget-title">🕷 Scrape Marketplace</div>
 
-      <div>
-        <label class="control-label">Filter by Category</label>
-        <div class="category-list" id="category-list">
-          <div style="padding:8px;color:var(--text-muted);font-size:12px">Loading<span class="loading-dots"></span></div>
+    <div style="margin-bottom:12px">
+      <label class="control-label">Choose Source</label>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:6px" id="marketplace-picker">
+        <div class="market-btn active" data-source="amazon" onclick="selectMarket(this)">
+          <div style="font-size:20px">🛒</div>
+          <div style="font-size:11px;font-weight:600;margin-top:4px">Amazon</div>
+        </div>
+        <div class="market-btn" data-source="ebay" onclick="selectMarket(this)">
+          <div style="font-size:20px">🏷</div>
+          <div style="font-size:11px;font-weight:600;margin-top:4px">eBay</div>
+        </div>
+        <div class="market-btn" data-source="etsy" onclick="selectMarket(this)">
+          <div style="font-size:20px">🧶</div>
+          <div style="font-size:11px;font-weight:600;margin-top:4px">Etsy</div>
         </div>
       </div>
     </div>
 
-    <div class="sidebar-widget">
-      <div class="sidebar-widget-title">📂 Upload Data</div>
-      <label class="upload-zone" for="csv-file-input">
-        ⬆ Upload CSV File<br>
-        <small style="color:var(--text-muted)">Click to browse</small>
-      </label>
-      <input type="file" id="csv-file-input" accept=".csv" />
-      <div id="upload-alert" style="margin-top:8px"></div>
+    <div style="margin-bottom:10px">
+      <label class="control-label">Search Keyword</label>
+      <input class="search-box" id="scrape-keyword" placeholder="e.g. surplus electronics" />
     </div>
 
-    <div class="sidebar-widget" style="background:var(--accent-light);border-color:var(--accent-border)">
-      <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:8px">🤖 AI Liquidation Engine</div>
-      <div style="font-size:12px;color:var(--text-secondary);margin-bottom:12px;line-height:1.5">Analyzes overstock items and generates pricing strategies using Groq LLaMA.</div>
-      <button class="run-btn" id="run-btn">
-        ▶ &nbsp;Run AI Optimizer
-      </button>
+    <div style="margin-bottom:12px">
+      <label class="control-label">Pages to Scrape &nbsp;<span id="pages-display">2</span></label>
+      <input type="range" id="pages-slider" min="1" max="5" value="2" step="1"
+        oninput="document.getElementById('pages-display').textContent = this.value" />
+      <div class="range-labels"><span>1</span><span>3</span><span>5</span></div>
     </div>
 
-  </aside>
+    <button class="run-btn" id="scrape-btn" onclick="runScrape()">
+      🕷 &nbsp;Scrape & Load Data
+    </button>
+    <div id="scrape-alert" style="margin-top:8px"></div>
+  </div>  <!-- ← closes Scrape Marketplace -->
+
+  <!-- UPLOAD DATA -->
+  <div class="sidebar-widget">
+    <div class="sidebar-widget-title">📂 Upload Data</div>
+    <label class="upload-zone" for="csv-file-input">
+      ⬆ Upload CSV File<br>
+      <small style="color:var(--text-muted)">Click to browse</small>
+    </label>
+    <input type="file" id="csv-file-input" accept=".csv" />
+    <div id="upload-alert" style="margin-top:8px"></div>
+  </div>  <!-- ← closes Upload Data -->
+
+  <!-- AI ENGINE -->
+  <div class="sidebar-widget" style="background:var(--accent-light);border-color:var(--accent-border)">
+    <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:8px">🤖 AI Liquidation Engine</div>
+    <div style="font-size:12px;color:var(--text-secondary);margin-bottom:12px;line-height:1.5">Analyzes overstock items and generates pricing strategies using Groq LLaMA.</div>
+    <button class="run-btn" id="run-btn">
+      ▶ &nbsp;Run AI Optimizer
+    </button>
+  </div>  <!-- ← closes AI Engine -->
+
+</aside>
 
   <!-- MAIN -->
   <main class="main">
@@ -1181,6 +1246,56 @@ document.getElementById('search-input').addEventListener('input', () => {
 });
 
 document.getElementById('run-btn').addEventListener('click', runOptimizer);
+
+
+let selectedMarket = 'amazon';
+
+function selectMarket(el) {
+  document.querySelectorAll('.market-btn').forEach(b => b.classList.remove('active'));
+  el.classList.add('active');
+  selectedMarket = el.dataset.source;
+}
+
+async function runScrape() {
+  const keyword = document.getElementById('scrape-keyword').value.trim();
+  const pages = document.getElementById('pages-slider').value;
+  const alertEl = document.getElementById('scrape-alert');
+  const btn = document.getElementById('scrape-btn');
+
+  if (!keyword) {
+    alertEl.className = 'alert error';
+    alertEl.textContent = '⚠ Please enter a keyword first.';
+    return;
+  }
+
+  btn.disabled = true;
+  btn.innerHTML = '⏳ &nbsp;Scraping<span class="loading-dots"></span>';
+  alertEl.className = 'alert info';
+  alertEl.textContent = `Scraping ${selectedMarket} for "${keyword}"...`;
+
+  try {
+    const r = await fetch(
+      `${API_BASE}/scrape?source=${selectedMarket}&keyword=${encodeURIComponent(keyword)}&pages=${pages}`,
+      { method: 'POST' }
+    );
+    const d = await r.json();
+
+    if (d.success) {
+      alertEl.className = 'alert success';
+      alertEl.textContent = `✓ Loaded ${d.row_count} products from ${d.source}`;
+      await init(); // refresh entire dashboard
+    } else {
+      alertEl.className = 'alert error';
+      alertEl.textContent = '⚠ ' + (d.detail || 'Scrape failed');
+    }
+  } catch (err) {
+    alertEl.className = 'alert error';
+    alertEl.textContent = '⚠ Scrape failed — is the API running?';
+  } finally {
+    btn.disabled = false;
+    btn.innerHTML = '🕷 &nbsp;Scrape & Load Data';
+  }
+}
 
 // === INIT ===
 async function init() {
