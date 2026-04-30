@@ -34,6 +34,16 @@
     --shadow-lg: 0 4px 16px rgba(0,0,0,0.15);
     --radius: 4px;
     --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    /* NEW: deploy platform colors */
+    --ebay-bg: #e8f0fe;
+    --ebay-color: #0057d9;
+    --ebay-border: #b8d0f8;
+    --depop-bg: #fce8f3;
+    --depop-color: #c2185b;
+    --depop-border: #f0b8d8;
+    --local-bg: #e6f4ea;
+    --local-color: #1a6e1a;
+    --local-border: #a8d5a2;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -108,7 +118,7 @@
     border: 1px solid;
   }
 
-  .status-badge.active { background: #1a4a2e; color: #4ade80; border-color: #2d6e42; }
+  .status-badge.active  { background: #1a4a2e; color: #4ade80; border-color: #2d6e42; }
   .status-badge.offline { background: #4a1a1a; color: #f87171; border-color: #6e2d2d; }
   .status-badge.connecting { background: #3a3a1a; color: #facc15; border-color: #5a5a2d; }
 
@@ -148,11 +158,10 @@
   .app-body {
     display: grid;
     grid-template-columns: 240px 1fr;
-    gap: 0;
+    gap: 16px;
     max-width: 1400px;
     margin: 0 auto;
     padding: 16px;
-    gap: 16px;
     align-items: start;
   }
 
@@ -277,7 +286,6 @@
   }
 
   .category-item:hover { background: var(--accent-light); color: var(--text); }
-
   .category-item.active { color: var(--text); }
 
   .category-check {
@@ -362,8 +370,8 @@
   }
 
   .alert.success { background: var(--green-light); color: var(--green); border: 1px solid #a8d5a2; display: block; }
-  .alert.error { background: var(--red-light); color: var(--red); border: 1px solid #f5c2c2; display: block; }
-  .alert.info { background: var(--blue-light); color: var(--blue); border: 1px solid #b8d4f0; display: block; }
+  .alert.error   { background: var(--red-light);   color: var(--red);   border: 1px solid #f5c2c2; display: block; }
+  .alert.info    { background: var(--blue-light);  color: var(--blue);  border: 1px solid #b8d4f0; display: block; }
 
   /* ===== MAIN CONTENT ===== */
   .main { display: flex; flex-direction: column; gap: 16px; }
@@ -387,37 +395,14 @@
 
   .kpi-card:hover { box-shadow: var(--shadow-md); }
 
-  .kpi-label {
-    font-size: 12px;
-    color: var(--text-secondary);
-    margin-bottom: 4px;
-    font-weight: 500;
-  }
-
-  .kpi-value {
-    font-size: 26px;
-    font-weight: 700;
-    color: var(--text);
-    line-height: 1.1;
-  }
-
+  .kpi-label { font-size: 12px; color: var(--text-secondary); margin-bottom: 4px; font-weight: 500; }
+  .kpi-value { font-size: 26px; font-weight: 700; color: var(--text); line-height: 1.1; }
   .kpi-value.orange { color: var(--accent-hover); }
-  .kpi-value.red { color: var(--red); }
-  .kpi-value.green { color: var(--green); }
-  .kpi-value.blue { color: var(--blue); }
-
-  .kpi-sub {
-    font-size: 11px;
-    color: var(--text-muted);
-    margin-top: 3px;
-  }
-
-  .kpi-icon {
-    position: absolute;
-    top: 14px; right: 14px;
-    font-size: 20px;
-    opacity: 0.15;
-  }
+  .kpi-value.red    { color: var(--red); }
+  .kpi-value.green  { color: var(--green); }
+  .kpi-value.blue   { color: var(--blue); }
+  .kpi-sub  { font-size: 11px; color: var(--text-muted); margin-top: 3px; }
+  .kpi-icon { position: absolute; top: 14px; right: 14px; font-size: 20px; opacity: 0.15; }
 
   /* ===== SECTION CARD ===== */
   .section-card {
@@ -437,11 +422,7 @@
     background: #fafafa;
   }
 
-  .section-title {
-    font-size: 15px;
-    font-weight: 700;
-    color: var(--text);
-  }
+  .section-title { font-size: 15px; font-weight: 700; color: var(--text); }
 
   .section-count {
     font-size: 12px;
@@ -459,12 +440,7 @@
     overflow-y: auto;
   }
 
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 13px;
-  }
-
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
   thead { position: sticky; top: 0; z-index: 10; }
 
   th {
@@ -494,7 +470,7 @@
   .td-name:hover { text-decoration: underline; color: #c45500; }
   .td-id { font-size: 11px; color: var(--text-muted); font-family: monospace; }
   .td-age { font-weight: 700; }
-  .td-age.over90 { color: #e47911; }
+  .td-age.over90  { color: #e47911; }
   .td-age.over180 { color: var(--red); }
 
   .badge {
@@ -507,9 +483,9 @@
     font-weight: 600;
   }
 
-  .badge-high { background: var(--red-light); color: var(--red); border: 1px solid #f5c2c2; }
-  .badge-medium { background: var(--orange-light); color: #c45500; border: 1px solid #f5d67a; }
-  .badge-low { background: var(--green-light); color: var(--green); border: 1px solid #a8d5a2; }
+  .badge-high   { background: var(--red-light);    color: var(--red);   border: 1px solid #f5c2c2; }
+  .badge-medium { background: var(--orange-light);  color: #c45500;      border: 1px solid #f5d67a; }
+  .badge-low    { background: var(--green-light);   color: var(--green); border: 1px solid #a8d5a2; }
 
   /* ===== OPTIMIZER PANEL ===== */
   .opt-toolbar {
@@ -521,12 +497,7 @@
     background: #fafafa;
   }
 
-  .opt-toolbar-label {
-    font-size: 12px;
-    font-weight: 600;
-    color: var(--text-secondary);
-    white-space: nowrap;
-  }
+  .opt-toolbar-label { font-size: 12px; font-weight: 600; color: var(--text-secondary); white-space: nowrap; }
 
   .progress-wrap {
     flex: 1;
@@ -545,13 +516,7 @@
     transition: width 0.3s ease;
   }
 
-  .progress-text {
-    font-size: 12px;
-    color: var(--text-secondary);
-    min-width: 55px;
-    text-align: right;
-    font-weight: 600;
-  }
+  .progress-text { font-size: 12px; color: var(--text-secondary); min-width: 55px; text-align: right; font-weight: 600; }
 
   /* Result stream */
   .stream-results {
@@ -559,7 +524,7 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
-    max-height: 420px;
+    max-height: 520px;
     overflow-y: auto;
   }
 
@@ -574,33 +539,191 @@
     background: var(--white);
     animation: slideIn 0.25s ease;
     box-shadow: var(--shadow-sm);
-    transition: box-shadow 0.2s;
+    transition: box-shadow 0.2s, opacity 0.4s;
   }
 
   .result-row:hover { box-shadow: var(--shadow-md); }
 
   @keyframes slideIn {
     from { opacity: 0; transform: translateY(-6px); }
-    to { opacity: 1; transform: translateY(0); }
+    to   { opacity: 1; transform: translateY(0); }
   }
 
-  .result-row.high { border-left: 3px solid var(--red); }
+  .result-row.high   { border-left: 3px solid var(--red); }
   .result-row.medium { border-left: 3px solid var(--accent); }
-  .result-row.low { border-left: 3px solid var(--green); }
+  .result-row.low    { border-left: 3px solid var(--green); }
 
-  .r-sku { font-size: 10px; color: var(--text-muted); font-family: monospace; }
-  .r-name { font-size: 13px; color: var(--blue); font-weight: 600; }
+  /* NEW: deployed state — dims the row so it steps aside visually */
+  .result-row.row-deployed {
+    opacity: 0.45;
+    background: #f8f8f8;
+  }
+
+  .result-row.row-deployed .r-deploy { display: none !important; }
+
+  .r-sku      { font-size: 10px; color: var(--text-muted); font-family: monospace; }
+  .r-name     { font-size: 13px; color: var(--blue); font-weight: 600; }
   .r-name:hover { text-decoration: underline; cursor: pointer; }
   .r-category { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
-  .r-price { font-size: 18px; font-weight: 700; color: var(--text); line-height: 1; }
+  .r-price    { font-size: 18px; font-weight: 700; color: var(--text); line-height: 1; }
   .r-price small { font-size: 12px; font-weight: 400; }
   .r-col-label { font-size: 10px; color: var(--text-muted); text-transform: uppercase; margin-bottom: 3px; font-weight: 600; letter-spacing: 0.5px; }
-  .r-profit { font-size: 14px; font-weight: 700; }
+  .r-profit   { font-size: 14px; font-weight: 700; }
   .r-profit.pos { color: var(--green); }
   .r-profit.neg { color: var(--red); }
-  .r-strategy { font-size: 12px; color: var(--text-secondary); line-height: 1.5; grid-column: 1 / -1; padding-top: 8px; border-top: 1px solid var(--border-light); }
+  .r-strategy {
+    font-size: 12px; color: var(--text-secondary); line-height: 1.5;
+    grid-column: 1 / -1;
+    padding-top: 8px;
+    border-top: 1px solid var(--border-light);
+  }
 
-  /* Summary */
+  /* ── NEW: deploy action bar inside each result row ────────────────── */
+  .r-deploy {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding-top: 8px;
+    flex-wrap: wrap;
+  }
+
+  .r-deploy-label {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    margin-right: 2px;
+    white-space: nowrap;
+  }
+
+  /* Base deploy button */
+  .deploy-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 11px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    border: 1px solid;
+    transition: background 0.15s, color 0.15s, transform 0.1s;
+    white-space: nowrap;
+    font-family: var(--font);
+  }
+
+  .deploy-btn:active:not(:disabled) { transform: scale(0.97); }
+
+  .deploy-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  /* eBay — blue */
+  .btn-ebay { background: var(--ebay-bg); color: var(--ebay-color); border-color: var(--ebay-border); }
+  .btn-ebay:hover:not(:disabled) { background: var(--ebay-color); color: #fff; border-color: var(--ebay-color); }
+
+  /* Depop — pink/red */
+  .btn-depop { background: var(--depop-bg); color: var(--depop-color); border-color: var(--depop-border); }
+  .btn-depop:hover:not(:disabled) { background: var(--depop-color); color: #fff; border-color: var(--depop-color); }
+
+  /* Local — green */
+  .btn-local { background: var(--local-bg); color: var(--local-color); border-color: var(--local-border); }
+  .btn-local:hover:not(:disabled) { background: var(--local-color); color: #fff; border-color: var(--local-color); }
+
+  /* Dismiss — neutral */
+  .btn-dismiss {
+    background: var(--bg);
+    color: var(--text-muted);
+    border-color: var(--border);
+    margin-left: auto;
+  }
+  .btn-dismiss:hover:not(:disabled) { background: #e0e0e0; color: var(--text); }
+
+  /* Spinner inside buttons */
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .btn-spinner {
+    display: inline-block;
+    width: 10px; height: 10px;
+    border: 2px solid currentColor;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+    flex-shrink: 0;
+  }
+
+  /* Inline success state after deploy */
+  .deploy-success-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .deploy-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 3px 10px;
+    border-radius: 10px;
+    font-size: 11px;
+    font-weight: 700;
+  }
+
+  .chip-ebay  { background: var(--ebay-bg);  color: var(--ebay-color);  border: 1px solid var(--ebay-border); }
+  .chip-depop { background: var(--depop-bg); color: var(--depop-color); border: 1px solid var(--depop-border); }
+  .chip-local { background: var(--local-bg); color: var(--local-color); border: 1px solid var(--local-border); }
+
+  .deploy-url-link {
+    color: var(--blue);
+    text-decoration: none;
+    font-size: 11px;
+    font-family: monospace;
+    max-width: 260px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .deploy-url-link:hover { text-decoration: underline; color: #c45500; }
+
+  .deploy-fee-note {
+    font-size: 10px;
+    color: var(--text-muted);
+    margin-left: auto;
+  }
+
+  /* ── NEW: Deployed Listings panel ────────────────────────────────── */
+  .deployed-table-wrap { overflow-x: auto; }
+
+  .deployed-table-wrap table { min-width: 700px; }
+
+  /* Platform badges in the deployed table */
+  .platform-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 8px;
+    border-radius: 10px;
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .pbadge-ebay  { background: var(--ebay-bg);  color: var(--ebay-color);  border: 1px solid var(--ebay-border); }
+  .pbadge-depop { background: var(--depop-bg); color: var(--depop-color); border: 1px solid var(--depop-border); }
+  .pbadge-local { background: var(--local-bg); color: var(--local-color); border: 1px solid var(--local-border); }
+
+  .listing-link {
+    color: var(--blue);
+    text-decoration: none;
+    font-size: 11px;
+    font-family: monospace;
+  }
+  .listing-link:hover { text-decoration: underline; color: #c45500; }
+
+  /* Summary strip */
   .summary-strip {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -609,38 +732,28 @@
     background: var(--accent-light);
   }
 
-  .sum-cell {
-    padding: 16px 20px;
-    text-align: center;
-    border-right: 1px solid var(--accent-border);
-  }
-
+  .sum-cell { padding: 16px 20px; text-align: center; border-right: 1px solid var(--accent-border); }
   .sum-cell:last-child { border-right: none; }
-
-  .sum-val {
-    font-size: 22px;
-    font-weight: 700;
-    color: var(--text);
-    margin-bottom: 3px;
-  }
-
+  .sum-val { font-size: 22px; font-weight: 700; color: var(--text); margin-bottom: 3px; }
   .sum-val.green { color: var(--green); }
-  .sum-lbl {
-    font-size: 11px;
-    color: var(--text-secondary);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+  .sum-lbl { font-size: 11px; color: var(--text-secondary); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+
+  /* NEW: deployed summary strip */
+  .deployed-summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border-bottom: 1px solid var(--border-light);
+    background: #f8fdf8;
   }
 
-  /* Empty/loading */
-  .empty-state {
-    padding: 40px;
-    text-align: center;
-    color: var(--text-muted);
-    font-size: 13px;
-  }
+  .dep-sum-cell { padding: 12px 16px; text-align: center; border-right: 1px solid var(--border-light); }
+  .dep-sum-cell:last-child { border-right: none; }
+  .dep-sum-val { font-size: 18px; font-weight: 700; color: var(--green); }
+  .dep-sum-lbl { font-size: 10px; color: var(--text-muted); text-transform: uppercase; font-weight: 600; letter-spacing: 0.5px; margin-top: 2px; }
 
+  /* Empty / loading */
+  .empty-state { padding: 40px; text-align: center; color: var(--text-muted); font-size: 13px; }
   .empty-state-icon { font-size: 36px; margin-bottom: 10px; }
   .empty-state p { color: var(--text-secondary); }
 
@@ -649,9 +762,7 @@
     animation: dots 1.2s steps(4) infinite;
   }
 
-  @keyframes dots {
-    0%,100%{content:''} 25%{content:'.'} 50%{content:'..'} 75%{content:'...'}
-  }
+  @keyframes dots { 0%,100%{content:''} 25%{content:'.'} 50%{content:'..'} 75%{content:'...'} }
 
   /* Scrollbars */
   ::-webkit-scrollbar { width: 6px; height: 6px; }
@@ -668,40 +779,31 @@
     align-items: center;
     gap: 6px;
   }
-
   .breadcrumb a { color: var(--blue); text-decoration: none; }
   .breadcrumb a:hover { text-decoration: underline; color: #c45500; }
   .breadcrumb span { color: var(--text-muted); }
 
+  /* Market picker */
+  .market-btn {
+    border: 2px solid var(--border);
+    border-radius: var(--radius);
+    padding: 10px 6px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.15s;
+    background: var(--white);
+    color: var(--text-secondary);
+  }
+  .market-btn:hover  { border-color: var(--accent); background: var(--accent-light); }
+  .market-btn.active { border-color: var(--accent); background: var(--accent-light); color: var(--text); }
+
   /* Responsive */
   @media (max-width: 900px) {
     .app-body { grid-template-columns: 1fr; }
-    .sidebar { position: static; }
-    .kpi-row { grid-template-columns: repeat(2, 1fr); }
+    .sidebar  { position: static; }
+    .kpi-row  { grid-template-columns: repeat(2, 1fr); }
     .result-row { grid-template-columns: 1fr 1fr; }
   }
-
-  .market-btn {
-  border: 2px solid var(--border);
-  border-radius: var(--radius);
-  padding: 10px 6px;
-  text-align: center;
-  cursor: pointer;
-  transition: all 0.15s;
-  background: var(--white);
-  color: var(--text-secondary);
-}
-
-.market-btn:hover {
-  border-color: var(--accent);
-  background: var(--accent-light);
-}
-
-.market-btn.active {
-  border-color: var(--accent);
-  background: var(--accent-light);
-  color: var(--text);
-}
 </style>
 </head>
 <body>
@@ -734,93 +836,93 @@
 <div class="app-body">
 
   <!-- SIDEBAR -->
- <aside class="sidebar">
+  <aside class="sidebar">
 
-  <!-- SEARCH & FILTER -->
-  <div class="sidebar-widget">
-    <div class="sidebar-widget-title">🔍 Search & Filter</div>
+    <!-- SEARCH & FILTER -->
+    <div class="sidebar-widget">
+      <div class="sidebar-widget-title">🔍 Search & Filter</div>
 
-    <div style="margin-bottom:14px">
-      <label class="control-label">Search Products</label>
-      <input class="search-box" type="text" id="search-input" placeholder="Search by product name..." />
-    </div>
-
-    <div style="margin-bottom:14px">
-      <label class="control-label">Min. Inventory Age <span id="age-display-inline">90 days</span></label>
-      <div class="age-display"><span id="age-display">90</span> <small>days old</small></div>
-      <input type="range" id="age-slider" min="0" max="300" value="90" step="5" />
-      <div class="range-labels"><span>0d</span><span>150d</span><span>300d</span></div>
-    </div>
-
-    <div>
-      <label class="control-label">Filter by Category</label>
-      <div class="category-list" id="category-list">
-        <div style="padding:8px;color:var(--text-muted);font-size:12px">Loading<span class="loading-dots"></span></div>
+      <div style="margin-bottom:14px">
+        <label class="control-label">Search Products</label>
+        <input class="search-box" type="text" id="search-input" placeholder="Search by product name..." />
       </div>
-    </div>
-  </div>  <!-- ← closes Search & Filter -->
 
-  <!-- SCRAPE MARKETPLACE -->
-  <div class="sidebar-widget">
-    <div class="sidebar-widget-title">🕷 Scrape Marketplace</div>
+      <div style="margin-bottom:14px">
+        <label class="control-label">Min. Inventory Age <span id="age-display-inline">90 days</span></label>
+        <div class="age-display"><span id="age-display">90</span> <small>days old</small></div>
+        <input type="range" id="age-slider" min="0" max="300" value="90" step="5" />
+        <div class="range-labels"><span>0d</span><span>150d</span><span>300d</span></div>
+      </div>
 
-    <div style="margin-bottom:12px">
-      <label class="control-label">Choose Source</label>
-      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:6px" id="marketplace-picker">
-        <div class="market-btn active" data-source="amazon" onclick="selectMarket(this)">
-          <div style="font-size:20px">🛒</div>
-          <div style="font-size:11px;font-weight:600;margin-top:4px">Amazon</div>
-        </div>
-        <div class="market-btn" data-source="ebay" onclick="selectMarket(this)">
-          <div style="font-size:20px">🏷</div>
-          <div style="font-size:11px;font-weight:600;margin-top:4px">eBay</div>
-        </div>
-        <div class="market-btn" data-source="etsy" onclick="selectMarket(this)">
-          <div style="font-size:20px">🧶</div>
-          <div style="font-size:11px;font-weight:600;margin-top:4px">Etsy</div>
+      <div>
+        <label class="control-label">Filter by Category</label>
+        <div class="category-list" id="category-list">
+          <div style="padding:8px;color:var(--text-muted);font-size:12px">Loading<span class="loading-dots"></span></div>
         </div>
       </div>
     </div>
 
-    <div style="margin-bottom:10px">
-      <label class="control-label">Search Keyword</label>
-      <input class="search-box" id="scrape-keyword" placeholder="e.g. surplus electronics" />
+    <!-- SCRAPE MARKETPLACE -->
+    <div class="sidebar-widget">
+      <div class="sidebar-widget-title">🕷 Scrape Marketplace</div>
+
+      <div style="margin-bottom:12px">
+        <label class="control-label">Choose Source</label>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:6px" id="marketplace-picker">
+          <div class="market-btn active" data-source="amazon" onclick="selectMarket(this)">
+            <div style="font-size:20px">🛒</div>
+            <div style="font-size:11px;font-weight:600;margin-top:4px">Amazon</div>
+          </div>
+          <div class="market-btn" data-source="ebay" onclick="selectMarket(this)">
+            <div style="font-size:20px">🏷</div>
+            <div style="font-size:11px;font-weight:600;margin-top:4px">eBay</div>
+          </div>
+          <div class="market-btn" data-source="etsy" onclick="selectMarket(this)">
+            <div style="font-size:20px">🧶</div>
+            <div style="font-size:11px;font-weight:600;margin-top:4px">Etsy</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-bottom:10px">
+        <label class="control-label">Search Keyword</label>
+        <input class="search-box" id="scrape-keyword" placeholder="e.g. surplus electronics" />
+      </div>
+
+      <div style="margin-bottom:12px">
+        <label class="control-label">Pages to Scrape &nbsp;<span id="pages-display">2</span></label>
+        <input type="range" id="pages-slider" min="1" max="5" value="2" step="1"
+          oninput="document.getElementById('pages-display').textContent = this.value" />
+        <div class="range-labels"><span>1</span><span>3</span><span>5</span></div>
+      </div>
+
+      <button class="run-btn" id="scrape-btn" onclick="runScrape()">
+        🕷 &nbsp;Scrape & Load Data
+      </button>
+      <div id="scrape-alert" style="margin-top:8px"></div>
     </div>
 
-    <div style="margin-bottom:12px">
-      <label class="control-label">Pages to Scrape &nbsp;<span id="pages-display">2</span></label>
-      <input type="range" id="pages-slider" min="1" max="5" value="2" step="1"
-        oninput="document.getElementById('pages-display').textContent = this.value" />
-      <div class="range-labels"><span>1</span><span>3</span><span>5</span></div>
+    <!-- UPLOAD DATA -->
+    <div class="sidebar-widget">
+      <div class="sidebar-widget-title">📂 Upload Data</div>
+      <label class="upload-zone" for="csv-file-input">
+        ⬆ Upload CSV File<br>
+        <small style="color:var(--text-muted)">Click to browse</small>
+      </label>
+      <input type="file" id="csv-file-input" accept=".csv" />
+      <div id="upload-alert" style="margin-top:8px"></div>
     </div>
 
-    <button class="run-btn" id="scrape-btn" onclick="runScrape()">
-      🕷 &nbsp;Scrape & Load Data
-    </button>
-    <div id="scrape-alert" style="margin-top:8px"></div>
-  </div>  <!-- ← closes Scrape Marketplace -->
+    <!-- AI ENGINE -->
+    <div class="sidebar-widget" style="background:var(--accent-light);border-color:var(--accent-border)">
+      <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:8px">🤖 AI Liquidation Engine</div>
+      <div style="font-size:12px;color:var(--text-secondary);margin-bottom:12px;line-height:1.5">Analyzes overstock items and generates pricing strategies using Groq LLaMA.</div>
+      <button class="run-btn" id="run-btn">
+        ▶ &nbsp;Run AI Optimizer
+      </button>
+    </div>
 
-  <!-- UPLOAD DATA -->
-  <div class="sidebar-widget">
-    <div class="sidebar-widget-title">📂 Upload Data</div>
-    <label class="upload-zone" for="csv-file-input">
-      ⬆ Upload CSV File<br>
-      <small style="color:var(--text-muted)">Click to browse</small>
-    </label>
-    <input type="file" id="csv-file-input" accept=".csv" />
-    <div id="upload-alert" style="margin-top:8px"></div>
-  </div>  <!-- ← closes Upload Data -->
-
-  <!-- AI ENGINE -->
-  <div class="sidebar-widget" style="background:var(--accent-light);border-color:var(--accent-border)">
-    <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:8px">🤖 AI Liquidation Engine</div>
-    <div style="font-size:12px;color:var(--text-secondary);margin-bottom:12px;line-height:1.5">Analyzes overstock items and generates pricing strategies using Groq LLaMA.</div>
-    <button class="run-btn" id="run-btn">
-      ▶ &nbsp;Run AI Optimizer
-    </button>
-  </div>  <!-- ← closes AI Engine -->
-
-</aside>
+  </aside>
 
   <!-- MAIN -->
   <main class="main">
@@ -940,6 +1042,55 @@
       </div>
     </div>
 
+    <!-- ═══════════════════════════════════════════════════════════
+         NEW: Deployed Listings Panel
+         Hidden until first deployment; revealed automatically.
+    ════════════════════════════════════════════════════════════════ -->
+    <div class="section-card" id="deployed-panel" style="display:none">
+      <div class="section-head">
+        <span class="section-title">🚀 Deployed Listings</span>
+        <span class="section-count" id="deployed-count">0 listings</span>
+      </div>
+
+      <!-- Summary strip for deployed totals -->
+      <div class="deployed-summary" id="deployed-summary">
+        <div class="dep-sum-cell">
+          <div class="dep-sum-val" id="dep-sum-count">0</div>
+          <div class="dep-sum-lbl">Total Listed</div>
+        </div>
+        <div class="dep-sum-cell">
+          <div class="dep-sum-val" id="dep-sum-revenue">$0.00</div>
+          <div class="dep-sum-lbl">Net Proceeds</div>
+        </div>
+        <div class="dep-sum-cell">
+          <div class="dep-sum-val" id="dep-sum-fees" style="color:var(--accent-hover)">$0.00</div>
+          <div class="dep-sum-lbl">Platform Fees</div>
+        </div>
+      </div>
+
+      <div class="deployed-table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Platform</th>
+              <th>SKU</th>
+              <th>Product</th>
+              <th>Listed At</th>
+              <th>Fee</th>
+              <th>Net</th>
+              <th>Listing URL</th>
+              <th>Deployed</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="deployed-body">
+            <!-- populated by renderDeployedPanel() -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- ═══════════════════════════════════════════════════════════ -->
+
   </main>
 </div>
 
@@ -950,25 +1101,32 @@ let allCategories = [];
 let inventoryData = [];
 let isRunning = false;
 
-function fmt$(n) { return '$' + Number(n).toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2}); }
+// NEW: per-row data store keyed by SKU (used by deploy buttons)
+const resultDataMap = {};
+// NEW: client-side deployed items list
+let deployedItems = [];
+
+function fmt$(n) {
+  return '$' + Number(n).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
 function fmtNum(n) { return Number(n).toLocaleString('en-US'); }
 
 // === API STATUS CHECK ===
 async function checkStatus() {
   const badge = document.getElementById('status-badge');
-  const text = document.getElementById('api-status');
+  const text  = document.getElementById('api-status');
   try {
     const r = await fetch(`${API_BASE}/`, { signal: AbortSignal.timeout(4000) });
     if (r.ok) {
       text.textContent = 'API Active';
-      badge.className = 'status-badge active';
+      badge.className  = 'status-badge active';
     } else {
       text.textContent = 'API Error';
-      badge.className = 'status-badge offline';
+      badge.className  = 'status-badge offline';
     }
   } catch {
     text.textContent = 'API Offline';
-    badge.className = 'status-badge offline';
+    badge.className  = 'status-badge offline';
   }
 }
 
@@ -1000,11 +1158,8 @@ function renderCategories() {
 }
 
 function toggleCategory(cat) {
-  if (selectedCategories.has(cat)) {
-    selectedCategories.delete(cat);
-  } else {
-    selectedCategories.add(cat);
-  }
+  if (selectedCategories.has(cat)) selectedCategories.delete(cat);
+  else selectedCategories.add(cat);
   renderCategories();
   loadInventory();
   loadStats();
@@ -1017,12 +1172,12 @@ async function loadStats() {
     const r = await fetch(`${API_BASE}/stats?min_age=${age}`);
     const d = await r.json();
     const s = d.stats;
-    document.getElementById('kpi-total').textContent = fmtNum(s.total_inventory);
+    document.getElementById('kpi-total').textContent     = fmtNum(s.total_inventory);
     document.getElementById('kpi-overstock').textContent = fmtNum(s.overstock_items);
-    document.getElementById('kpi-atrisk').textContent = fmtNum(s.at_risk_items);
-    document.getElementById('kpi-critical').textContent = fmtNum(s.critical_items);
-    document.getElementById('kpi-value').textContent = '$' + fmtNum(Math.round(s.total_value));
-    document.getElementById('kpi-co2').textContent = fmtNum(Math.round(s.total_waste_footprint_kg)) + ' kg';
+    document.getElementById('kpi-atrisk').textContent    = fmtNum(s.at_risk_items);
+    document.getElementById('kpi-critical').textContent  = fmtNum(s.critical_items);
+    document.getElementById('kpi-value').textContent     = '$' + fmtNum(Math.round(s.total_value));
+    document.getElementById('kpi-co2').textContent       = fmtNum(Math.round(s.total_waste_footprint_kg)) + ' kg';
   } catch (e) {
     console.error('Stats error:', e);
   }
@@ -1030,20 +1185,20 @@ async function loadStats() {
 
 // === LOAD INVENTORY ===
 async function loadInventory() {
-  const age = document.getElementById('age-slider').value;
+  const age    = document.getElementById('age-slider').value;
   const search = document.getElementById('search-input').value;
-  const cats = [...selectedCategories].join(',');
+  const cats   = [...selectedCategories].join(',');
 
   let url = `${API_BASE}/inventory?min_age=0&max_age=9999`;
-  if (age > 0) url += `&min_age=${age}`;
-  if (cats) url += `&categories=${encodeURIComponent(cats)}`;
-  if (search) url += `&search=${encodeURIComponent(search)}`;
+  if (age > 0)  url += `&min_age=${age}`;
+  if (cats)     url += `&categories=${encodeURIComponent(cats)}`;
+  if (search)   url += `&search=${encodeURIComponent(search)}`;
 
   try {
     const r = await fetch(url);
     const d = await r.json();
     inventoryData = d.data || [];
-    document.getElementById('kpi-filtered').textContent = fmtNum(d.count);
+    document.getElementById('kpi-filtered').textContent    = fmtNum(d.count);
     document.getElementById('inventory-count').textContent = `${fmtNum(d.count)} items`;
     renderInventoryTable(inventoryData);
   } catch (e) {
@@ -1059,9 +1214,7 @@ function renderInventoryTable(data) {
   const tbody = document.getElementById('inventory-body');
   if (!data.length) {
     tbody.innerHTML = `<tr><td colspan="7" class="empty-state">
-      <div class="empty-state-icon">📭</div>
-      No items match the current filters
-    </td></tr>`;
+      <div class="empty-state-icon">📭</div>No items match the current filters</td></tr>`;
     return;
   }
   tbody.innerHTML = data.map(row => {
@@ -1087,13 +1240,13 @@ async function runOptimizer() {
   btn.disabled = true;
   btn.innerHTML = '⏳ &nbsp;Processing<span class="loading-dots"></span>';
 
-  const age = document.getElementById('age-slider').value;
+  const age  = document.getElementById('age-slider').value;
   const cats = [...selectedCategories].join(',');
 
   const streamEl = document.getElementById('stream-results');
   streamEl.innerHTML = '';
 
-  const progressBar = document.getElementById('progress-bar');
+  const progressBar  = document.getElementById('progress-bar');
   const progressText = document.getElementById('progress-text');
   progressBar.style.width = '0%';
   progressText.textContent = '0%';
@@ -1108,9 +1261,9 @@ async function runOptimizer() {
 
   try {
     const response = await fetch(url, { method: 'POST' });
-    const reader = response.body.getReader();
-    const decoder = new TextDecoder();
-    let buffer = '';
+    const reader   = response.body.getReader();
+    const decoder  = new TextDecoder();
+    let buffer     = '';
 
     while (true) {
       const { done, value } = await reader.read();
@@ -1136,13 +1289,11 @@ async function runOptimizer() {
           if (data.done) {
             progressBar.style.width = '100%';
             progressText.textContent = '100%';
-
             optCount.textContent = `${data.total_processed} items processed`;
             optCount.style.display = 'inline-block';
-
             document.getElementById('sum-profit').textContent = fmt$(data.total_profit);
-            document.getElementById('sum-co2').textContent = fmtNum(Math.round(data.total_co2_kg)) + ' kg';
-            document.getElementById('sum-urgency').innerHTML = `
+            document.getElementById('sum-co2').textContent    = fmtNum(Math.round(data.total_co2_kg)) + ' kg';
+            document.getElementById('sum-urgency').innerHTML  = `
               <span style="color:var(--red)">${data.high_urgency} High</span> &nbsp;
               <span style="color:#c45500">${data.medium_urgency} Med</span> &nbsp;
               <span style="color:var(--green)">${data.low_urgency} Low</span>
@@ -1152,14 +1303,24 @@ async function runOptimizer() {
           }
 
           const pct = Math.round((data.progress / data.total) * 100);
-          progressBar.style.width = pct + '%';
+          progressBar.style.width  = pct + '%';
           progressText.textContent = `${data.progress} / ${data.total}`;
 
           const profitClass = data.est_profit >= 0 ? 'pos' : 'neg';
-          const profitSign = data.est_profit >= 0 ? '+' : '';
+          const profitSign  = data.est_profit >= 0 ? '+' : '';
 
+          // ── Store item data for deploy buttons ────────────────────────
+          resultDataMap[data.sku] = {
+            sku:          data.sku,
+            item:         data.item,
+            resale_price: data.resale_price
+          };
+
+          // ── Build result row (with deploy action bar) ─────────────────
           const row = document.createElement('div');
           row.className = `result-row ${data.urgency}`;
+          row.dataset.sku = data.sku;   // used by deploy buttons via closest()
+
           row.innerHTML = `
             <div>
               <div class="r-sku">${data.sku}</div>
@@ -1182,7 +1343,21 @@ async function runOptimizer() {
               <div style="font-size:14px;font-weight:600;color:var(--green)">${data.co2_impact_kg} kg</div>
             </div>
             <div class="r-strategy">${data.strategy}</div>
+
+            <!-- NEW: deploy action bar -->
+            <div class="r-deploy">
+              <span class="r-deploy-label">Deploy to:</span>
+              <button class="deploy-btn btn-ebay"
+                      onclick="deployItem(this,'ebay')">🏷 eBay</button>
+              <button class="deploy-btn btn-depop"
+                      onclick="deployItem(this,'depop')">👗 Depop</button>
+              <button class="deploy-btn btn-local"
+                      onclick="deployItem(this,'local')">📍 Local</button>
+              <button class="deploy-btn btn-dismiss"
+                      onclick="markDeployed(this)">✓ Mark Done</button>
+            </div>
           `;
+
           streamEl.appendChild(row);
           streamEl.scrollTop = streamEl.scrollHeight;
 
@@ -1195,7 +1370,8 @@ async function runOptimizer() {
     streamEl.innerHTML = `<div style="padding:24px;text-align:center;background:var(--red-light);border-radius:4px;margin:8px">
       <div style="font-size:24px;margin-bottom:8px">⚠</div>
       <strong style="color:var(--red)">Failed to connect to optimizer.</strong><br>
-      <span style="color:var(--text-secondary);font-size:12px;margin-top:6px;display:block">Make sure FastAPI is running at <code>${API_BASE}</code></span>
+      <span style="color:var(--text-secondary);font-size:12px;margin-top:6px;display:block">
+        Make sure FastAPI is running at <code>${API_BASE}</code></span>
     </div>`;
   } finally {
     isRunning = false;
@@ -1204,13 +1380,187 @@ async function runOptimizer() {
   }
 }
 
-// === CSV UPLOAD ===
+// ═══════════════════════════════════════════════════════════════════
+// NEW: DEPLOY FEATURE
+// ═══════════════════════════════════════════════════════════════════
+
+/**
+ * Called when user clicks one of the three platform buttons.
+ * @param {HTMLButtonElement} btn  — the clicked button
+ * @param {string} platform        — 'ebay' | 'depop' | 'local'
+ */
+async function deployItem(btn, platform) {
+  // Walk up to the result-row to get the SKU and sibling buttons
+  const row   = btn.closest('.result-row');
+  const sku   = row.dataset.sku;
+  const d     = resultDataMap[sku];
+  if (!d) return;
+
+  const deployDiv = row.querySelector('.r-deploy');
+  const allBtns   = deployDiv.querySelectorAll('.deploy-btn');
+
+  // Disable all buttons in this row while request is in flight
+  allBtns.forEach(b => b.disabled = true);
+
+  const origHTML = btn.innerHTML;
+  btn.innerHTML  = `<span class="btn-spinner"></span> Listing…`;
+
+  try {
+    const resp = await fetch(`${API_BASE}/deploy`, {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        sku:          sku,
+        product_name: d.item,
+        resale_price: d.resale_price,
+        platform:     platform
+      })
+    });
+
+    const result = await resp.json();
+
+    if (result.success) {
+      // ── Success: replace the deploy bar with a status line ──────────
+      const platformLabel = { ebay: 'eBay', depop: 'Depop', local: 'Local Board' };
+      const platformIcon  = { ebay: '🏷',   depop: '👗',   local: '📍' };
+      const chipClass     = `chip-${platform}`;
+      const shortUrl      = result.listing_url.length > 48
+        ? result.listing_url.substring(0, 48) + '…'
+        : result.listing_url;
+
+      deployDiv.innerHTML = `
+        <div class="deploy-success-bar">
+          <span class="deploy-chip ${chipClass}">
+            ${platformIcon[platform]} Listed on ${platformLabel[platform]}
+          </span>
+          <a href="${result.listing_url}" target="_blank" class="deploy-url-link"
+             title="${result.listing_url}">${shortUrl}</a>
+          <span class="deploy-fee-note">
+            Fee: ${fmt$(result.platform_fee_usd)} · Net: ${fmt$(result.net_proceeds_usd)}
+          </span>
+        </div>
+      `;
+
+      // ── Add to local deployed list & refresh panel ────────────────
+      deployedItems.push({
+        platform:        platform,
+        sku:             sku,
+        product_name:    d.item,
+        resale_price:    d.resale_price,
+        platform_fee:    result.platform_fee_usd,
+        net_proceeds:    result.net_proceeds_usd,
+        listing_id:      result.listing_id,
+        listing_url:     result.listing_url,
+        message:         result.message,
+        deployed_at:     new Date().toLocaleString()
+      });
+
+      renderDeployedPanel();
+
+    } else {
+      // ── API returned success:false ────────────────────────────────
+      showDeployError(btn, allBtns, origHTML, 'Listing failed');
+    }
+
+  } catch (err) {
+    console.error('Deploy error:', err);
+    showDeployError(btn, allBtns, origHTML, 'Network error');
+  }
+}
+
+/** Briefly show an error state on the button then restore it. */
+function showDeployError(btn, allBtns, origHTML, msg) {
+  btn.innerHTML = `⚠ ${msg}`;
+  btn.style.background = 'var(--red-light)';
+  btn.style.color      = 'var(--red)';
+  btn.style.borderColor = '#f5c2c2';
+  setTimeout(() => {
+    btn.innerHTML = origHTML;
+    btn.style.background  = '';
+    btn.style.color       = '';
+    btn.style.borderColor = '';
+    allBtns.forEach(b => b.disabled = false);
+  }, 2200);
+}
+
+/**
+ * "Mark Done" — visually dims the row without calling the API.
+ * Useful when an item was handled outside the tool (e.g. phone call).
+ */
+function markDeployed(btn) {
+  const row = btn.closest('.result-row');
+  row.classList.add('row-deployed');
+}
+
+/**
+ * Re-renders the Deployed Listings panel from the in-memory list.
+ * Also syncs the three summary KPIs above the table.
+ */
+function renderDeployedPanel() {
+  const panel     = document.getElementById('deployed-panel');
+  const countEl   = document.getElementById('deployed-count');
+  const tbody     = document.getElementById('deployed-body');
+  const sumCount  = document.getElementById('dep-sum-count');
+  const sumRev    = document.getElementById('dep-sum-revenue');
+  const sumFees   = document.getElementById('dep-sum-fees');
+
+  // Always reveal the panel on first deployment
+  panel.style.display = 'block';
+
+  const n           = deployedItems.length;
+  const totalNet    = deployedItems.reduce((s, d) => s + d.net_proceeds, 0);
+  const totalFees   = deployedItems.reduce((s, d) => s + d.platform_fee, 0);
+
+  countEl.textContent   = `${n} listing${n !== 1 ? 's' : ''}`;
+  sumCount.textContent  = n;
+  sumRev.textContent    = fmt$(totalNet);
+  sumFees.textContent   = fmt$(totalFees);
+
+  if (!n) {
+    tbody.innerHTML = `<tr><td colspan="9" class="empty-state">No items deployed yet.</td></tr>`;
+    return;
+  }
+
+  const platformIcon  = { ebay: '🏷', depop: '👗', local: '📍' };
+  const platformLabel = { ebay: 'eBay', depop: 'Depop', local: 'Local' };
+
+  // Newest first
+  const rows = [...deployedItems].reverse().map(d => {
+    const shortUrl = d.listing_url.length > 38
+      ? d.listing_url.substring(0, 38) + '…'
+      : d.listing_url;
+    return `<tr>
+      <td>
+        <span class="platform-badge pbadge-${d.platform}">
+          ${platformIcon[d.platform]} ${platformLabel[d.platform]}
+        </span>
+      </td>
+      <td class="td-id">${d.sku}</td>
+      <td class="td-name" style="max-width:160px;overflow:hidden;text-overflow:ellipsis" title="${d.product_name}">${d.product_name}</td>
+      <td style="font-weight:700">${fmt$(d.resale_price)}</td>
+      <td style="color:var(--accent-hover)">${fmt$(d.platform_fee)}</td>
+      <td style="font-weight:700;color:var(--green)">${fmt$(d.net_proceeds)}</td>
+      <td>
+        <a href="${d.listing_url}" target="_blank"
+           class="listing-link" title="${d.listing_url}">${shortUrl}</a>
+      </td>
+      <td style="font-size:11px;color:var(--text-muted)">${d.deployed_at}</td>
+      <td><span class="badge badge-low">✓ Active</span></td>
+    </tr>`;
+  }).join('');
+
+  tbody.innerHTML = rows;
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// EXISTING: CSV UPLOAD
+// ═══════════════════════════════════════════════════════════════════
 document.getElementById('csv-file-input').addEventListener('change', async (e) => {
   const file = e.target.files[0];
   if (!file) return;
 
   const alertEl = document.getElementById('upload-alert');
-  alertEl.className = 'alert info';
+  alertEl.className   = 'alert info';
   alertEl.textContent = `Uploading ${file.name}...`;
 
   const fd = new FormData();
@@ -1220,22 +1570,22 @@ document.getElementById('csv-file-input').addEventListener('change', async (e) =
     const r = await fetch(`${API_BASE}/upload`, { method: 'POST', body: fd });
     const d = await r.json();
     if (d.success) {
-      alertEl.className = 'alert success';
+      alertEl.className   = 'alert success';
       alertEl.textContent = `✓ Loaded ${d.row_count} rows from ${d.filename}`;
       await init();
     } else {
-      alertEl.className = 'alert error';
+      alertEl.className   = 'alert error';
       alertEl.textContent = '⚠ ' + (d.detail || 'Upload failed');
     }
   } catch (err) {
-    alertEl.className = 'alert error';
+    alertEl.className   = 'alert error';
     alertEl.textContent = '⚠ Upload failed — API offline?';
   }
 });
 
 // === EVENTS ===
 document.getElementById('age-slider').addEventListener('input', (e) => {
-  document.getElementById('age-display').textContent = e.target.value;
+  document.getElementById('age-display').textContent        = e.target.value;
   document.getElementById('age-display-inline').textContent = e.target.value + ' days';
   loadInventory();
   loadStats();
@@ -1247,7 +1597,6 @@ document.getElementById('search-input').addEventListener('input', () => {
 
 document.getElementById('run-btn').addEventListener('click', runOptimizer);
 
-
 let selectedMarket = 'amazon';
 
 function selectMarket(el) {
@@ -1258,19 +1607,19 @@ function selectMarket(el) {
 
 async function runScrape() {
   const keyword = document.getElementById('scrape-keyword').value.trim();
-  const pages = document.getElementById('pages-slider').value;
+  const pages   = document.getElementById('pages-slider').value;
   const alertEl = document.getElementById('scrape-alert');
-  const btn = document.getElementById('scrape-btn');
+  const btn     = document.getElementById('scrape-btn');
 
   if (!keyword) {
-    alertEl.className = 'alert error';
+    alertEl.className   = 'alert error';
     alertEl.textContent = '⚠ Please enter a keyword first.';
     return;
   }
 
-  btn.disabled = true;
-  btn.innerHTML = '⏳ &nbsp;Scraping<span class="loading-dots"></span>';
-  alertEl.className = 'alert info';
+  btn.disabled    = true;
+  btn.innerHTML   = '⏳ &nbsp;Scraping<span class="loading-dots"></span>';
+  alertEl.className   = 'alert info';
   alertEl.textContent = `Scraping ${selectedMarket} for "${keyword}"...`;
 
   try {
@@ -1281,18 +1630,18 @@ async function runScrape() {
     const d = await r.json();
 
     if (d.success) {
-      alertEl.className = 'alert success';
+      alertEl.className   = 'alert success';
       alertEl.textContent = `✓ Loaded ${d.row_count} products from ${d.source}`;
-      await init(); // refresh entire dashboard
+      await init();
     } else {
-      alertEl.className = 'alert error';
+      alertEl.className   = 'alert error';
       alertEl.textContent = '⚠ ' + (d.detail || 'Scrape failed');
     }
   } catch (err) {
-    alertEl.className = 'alert error';
+    alertEl.className   = 'alert error';
     alertEl.textContent = '⚠ Scrape failed — is the API running?';
   } finally {
-    btn.disabled = false;
+    btn.disabled  = false;
     btn.innerHTML = '🕷 &nbsp;Scrape & Load Data';
   }
 }
