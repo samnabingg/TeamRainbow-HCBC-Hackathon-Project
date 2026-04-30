@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eco-Arbitrage AI — Inventory Intelligence</title>
+<link href="https://fonts.googleapis.com/css2?family=Amazon+Ember:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f3f3f3;
+    --white: #ffffff;
+    --surface: #ffffff;
+    --border: #dddddd;
+    --border-light: #e7e7e7;
+    --accent: #ff9900;
+    --accent-hover: #e47911;
+    --accent-light: #fff8ee;
+    --accent-border: #f0c97a;
+    --blue: #0066c0;
+    --blue-light: #e8f0fe;
+    --green: #007600;
+    --green-light: #e6f4ea;
+    --red: #c40000;
+    --red-light: #fdecea;
+    --orange-light: #fff3cd;
+    --text: #0f1111;
+    --text-secondary: #565959;
+    --text-muted: #8a8a8a;
+    --nav-bg: #131921;
+    --nav-secondary: #232f3e;
+    --star: #ff9900;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+    --shadow-md: 0 2px 8px rgba(0,0,0,0.14);
+    --shadow-lg: 0 4px 16px rgba(0,0,0,0.15);
+    --radius: 4px;
+    --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font);
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* ===== TOP NAV ===== */
+  .nav-top {
+    background: var(--nav-bg);
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    position: sticky;
+    top: 0;
+    z-index: 200;
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+  }
+
+  .nav-logo-icon {
+    width: 32px;
+    height: 32px;
+    background: var(--accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+
+  .nav-logo-text {
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: -0.3px;
+    line-height: 1;
+  }
+
+  .nav-logo-text span { color: var(--accent); }
+
+  .nav-subtitle {
+    font-size: 11px;
+    color: #aab7b8;
+    border-left: 1px solid #3a4553;
+    padding-left: 16px;
+    white-space: nowrap;
+  }
+
+  .nav-spacer { flex: 1; }
+
+  .status-badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 12px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 600;
+    border: 1px solid;
+  }
+
+  .status-badge.active { background: #1a4a2e; color: #4ade80; border-color: #2d6e42; }
+  .status-badge.offline { background: #4a1a1a; color: #f87171; border-color: #6e2d2d; }
+  .status-badge.connecting { background: #3a3a1a; color: #facc15; border-color: #5a5a2d; }
+
+  .status-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: currentColor;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
+  /* ===== SUB NAV ===== */
+  .nav-sub {
+    background: var(--nav-secondary);
+    padding: 6px 16px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    overflow-x: auto;
+  }
+
+  .nav-sub-item {
+    padding: 5px 12px;
+    color: #ffffff;
+    font-size: 13px;
+    border-radius: 2px;
+    cursor: pointer;
+    white-space: nowrap;
+    border: 1px solid transparent;
+    transition: border-color 0.15s;
+  }
+
+  .nav-sub-item:hover, .nav-sub-item.active { border-color: #ffffff; }
+
+  /* ===== LAYOUT ===== */
+  .app-body {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 0;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 16px;
+    gap: 16px;
+    align-items: start;
+  }
+
+  /* ===== SIDEBAR ===== */
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: sticky;
+    top: 90px;
+  }
+
+  .sidebar-widget {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px;
+    margin-bottom: 12px;
+  }
+
+  .sidebar-widget-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .control-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 6px;
+    display: block;
+  }
+
+  .control-label span {
+    font-weight: 400;
+    color: var(--blue);
+    font-size: 12px;
+    margin-left: 4px;
+  }
+
+  .age-display {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text);
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+    margin-bottom: 8px;
+  }
+
+  .age-display small { font-size: 13px; font-weight: 400; color: var(--text-secondary); }
+
+  input[type="range"] {
+    width: 100%;
+    appearance: none;
+    height: 4px;
+    background: var(--border);
+    border-radius: 2px;
+    outline: none;
+    margin-bottom: 4px;
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    width: 16px; height: 16px;
+    background: var(--accent);
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid white;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .range-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: var(--text-muted);
+  }
+
+  .search-box {
+    width: 100%;
+    padding: 7px 10px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-size: 13px;
+    color: var(--text);
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    font-family: var(--font);
+  }
+
+  .search-box:focus {
+    border-color: #e77600;
+    box-shadow: 0 0 0 3px rgba(231,118,0,0.25);
+  }
+
+  .search-box::placeholder { color: var(--text-muted); }
+
+  .category-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    max-height: 200px;
+    overflow-y: auto;
+  }
+
+  .category-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 6px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 13px;
+    color: var(--text-secondary);
+    transition: background 0.1s;
+    user-select: none;
+  }
+
+  .category-item:hover { background: var(--accent-light); color: var(--text); }
+
+  .category-item.active { color: var(--text); }
+
+  .category-check {
+    width: 15px; height: 15px;
+    border: 2px solid var(--border);
+    border-radius: 2px;
+    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 9px;
+    transition: all 0.15s;
+  }
+
+  .category-item.active .category-check {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: white;
+  }
+
+  /* Amazon-style CTA Button */
+  .run-btn {
+    width: 100%;
+    padding: 10px 16px;
+    background: linear-gradient(to bottom, #f7ca00, #f0ac00);
+    color: var(--text);
+    border: 1px solid #a88734;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    letter-spacing: 0.1px;
+    transition: all 0.15s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset;
+  }
+
+  .run-btn:hover {
+    background: linear-gradient(to bottom, #f5c400, #e8a200);
+    border-color: #9c7e31;
+  }
+
+  .run-btn:active { background: #f0ac00; box-shadow: none; }
+
+  .run-btn:disabled {
+    background: #f3f3f3;
+    border-color: #d5d9d9;
+    color: var(--text-muted);
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+
+  /* Upload */
+  .upload-zone {
+    display: block;
+    border: 2px dashed var(--border);
+    border-radius: var(--radius);
+    padding: 14px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+  }
+
+  .upload-zone:hover {
+    border-color: var(--accent);
+    background: var(--accent-light);
+    color: var(--text);
+  }
+
+  #csv-file-input { display: none; }
+
+  .alert {
+    padding: 8px 10px;
+    border-radius: var(--radius);
+    font-size: 12px;
+    display: none;
+    line-height: 1.4;
+  }
+
+  .alert.success { background: var(--green-light); color: var(--green); border: 1px solid #a8d5a2; display: block; }
+  .alert.error { background: var(--red-light); color: var(--red); border: 1px solid #f5c2c2; display: block; }
+  .alert.info { background: var(--blue-light); color: var(--blue); border: 1px solid #b8d4f0; display: block; }
+
+  /* ===== MAIN CONTENT ===== */
+  .main { display: flex; flex-direction: column; gap: 16px; }
+
+  /* ===== KPI ROW ===== */
+  .kpi-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+
+  .kpi-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 14px 16px;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow 0.2s;
+    position: relative;
+  }
+
+  .kpi-card:hover { box-shadow: var(--shadow-md); }
+
+  .kpi-label {
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin-bottom: 4px;
+    font-weight: 500;
+  }
+
+  .kpi-value {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.1;
+  }
+
+  .kpi-value.orange { color: var(--accent-hover); }
+  .kpi-value.red { color: var(--red); }
+  .kpi-value.green { color: var(--green); }
+  .kpi-value.blue { color: var(--blue); }
+
+  .kpi-sub {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 3px;
+  }
+
+  .kpi-icon {
+    position: absolute;
+    top: 14px; right: 14px;
+    font-size: 20px;
+    opacity: 0.15;
+  }
+
+  /* ===== SECTION CARD ===== */
+  .section-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+  }
+
+  .section-head {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border-light);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fafafa;
+  }
+
+  .section-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .section-count {
+    font-size: 12px;
+    color: var(--text-secondary);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    padding: 2px 8px;
+    border-radius: 10px;
+  }
+
+  /* ===== TABLE ===== */
+  .table-scroll {
+    overflow-x: auto;
+    max-height: 340px;
+    overflow-y: auto;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+
+  thead { position: sticky; top: 0; z-index: 10; }
+
+  th {
+    background: #f0f2f2;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-secondary);
+    padding: 9px 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  td {
+    padding: 8px 14px;
+    border-bottom: 1px solid var(--border-light);
+    color: var(--text-secondary);
+    white-space: nowrap;
+  }
+
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: #f6f9fe; }
+
+  .td-name { color: var(--blue); font-weight: 500; max-width: 200px; overflow: hidden; text-overflow: ellipsis; cursor: pointer; }
+  .td-name:hover { text-decoration: underline; color: #c45500; }
+  .td-id { font-size: 11px; color: var(--text-muted); font-family: monospace; }
+  .td-age { font-weight: 700; }
+  .td-age.over90 { color: #e47911; }
+  .td-age.over180 { color: var(--red); }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    padding: 2px 7px;
+    border-radius: 10px;
+    font-size: 11px;
+    font-weight: 600;
+  }
+
+  .badge-high { background: var(--red-light); color: var(--red); border: 1px solid #f5c2c2; }
+  .badge-medium { background: var(--orange-light); color: #c45500; border: 1px solid #f5d67a; }
+  .badge-low { background: var(--green-light); color: var(--green); border: 1px solid #a8d5a2; }
+
+  /* ===== OPTIMIZER PANEL ===== */
+  .opt-toolbar {
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--border-light);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #fafafa;
+  }
+
+  .opt-toolbar-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    white-space: nowrap;
+  }
+
+  .progress-wrap {
+    flex: 1;
+    height: 6px;
+    background: var(--bg);
+    border-radius: 3px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+
+  .progress-bar {
+    height: 100%;
+    background: linear-gradient(to right, #f0ac00, var(--accent));
+    border-radius: 3px;
+    width: 0%;
+    transition: width 0.3s ease;
+  }
+
+  .progress-text {
+    font-size: 12px;
+    color: var(--text-secondary);
+    min-width: 55px;
+    text-align: right;
+    font-weight: 600;
+  }
+
+  /* Result stream */
+  .stream-results {
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-height: 420px;
+    overflow-y: auto;
+  }
+
+  .result-row {
+    display: grid;
+    grid-template-columns: 70px 1fr 100px 100px 100px 1fr;
+    gap: 12px;
+    align-items: start;
+    padding: 12px 14px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    background: var(--white);
+    animation: slideIn 0.25s ease;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow 0.2s;
+  }
+
+  .result-row:hover { box-shadow: var(--shadow-md); }
+
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateY(-6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .result-row.high { border-left: 3px solid var(--red); }
+  .result-row.medium { border-left: 3px solid var(--accent); }
+  .result-row.low { border-left: 3px solid var(--green); }
+
+  .r-sku { font-size: 10px; color: var(--text-muted); font-family: monospace; }
+  .r-name { font-size: 13px; color: var(--blue); font-weight: 600; }
+  .r-name:hover { text-decoration: underline; cursor: pointer; }
+  .r-category { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+  .r-price { font-size: 18px; font-weight: 700; color: var(--text); line-height: 1; }
+  .r-price small { font-size: 12px; font-weight: 400; }
+  .r-col-label { font-size: 10px; color: var(--text-muted); text-transform: uppercase; margin-bottom: 3px; font-weight: 600; letter-spacing: 0.5px; }
+  .r-profit { font-size: 14px; font-weight: 700; }
+  .r-profit.pos { color: var(--green); }
+  .r-profit.neg { color: var(--red); }
+  .r-strategy { font-size: 12px; color: var(--text-secondary); line-height: 1.5; grid-column: 1 / -1; padding-top: 8px; border-top: 1px solid var(--border-light); }
+
+  /* Summary */
+  .summary-strip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--border);
+    background: var(--accent-light);
+  }
+
+  .sum-cell {
+    padding: 16px 20px;
+    text-align: center;
+    border-right: 1px solid var(--accent-border);
+  }
+
+  .sum-cell:last-child { border-right: none; }
+
+  .sum-val {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 3px;
+  }
+
+  .sum-val.green { color: var(--green); }
+  .sum-lbl {
+    font-size: 11px;
+    color: var(--text-secondary);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  /* Empty/loading */
+  .empty-state {
+    padding: 40px;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 13px;
+  }
+
+  .empty-state-icon { font-size: 36px; margin-bottom: 10px; }
+  .empty-state p { color: var(--text-secondary); }
+
+  .loading-dots::after {
+    content: '...';
+    animation: dots 1.2s steps(4) infinite;
+  }
+
+  @keyframes dots {
+    0%,100%{content:''} 25%{content:'.'} 50%{content:'..'} 75%{content:'...'}
+  }
+
+  /* Scrollbars */
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: #aaa; }
+
+  /* Breadcrumb */
+  .breadcrumb {
+    font-size: 12px;
+    color: var(--text-secondary);
+    padding: 8px 0 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .breadcrumb a { color: var(--blue); text-decoration: none; }
+  .breadcrumb a:hover { text-decoration: underline; color: #c45500; }
+  .breadcrumb span { color: var(--text-muted); }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .app-body { grid-template-columns: 1fr; }
+    .sidebar { position: static; }
+    .kpi-row { grid-template-columns: repeat(2, 1fr); }
+    .result-row { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP NAV -->
+<nav class="nav-top">
+  <a class="nav-logo" href="#">
+    <div class="nav-logo-icon">♻</div>
+    <div>
+      <div class="nav-logo-text">eco<span>arbitrage</span></div>
+    </div>
+  </a>
+  <span class="nav-subtitle">AI Inventory Intelligence System</span>
+  <div class="nav-spacer"></div>
+  <div class="status-badge connecting" id="status-badge">
+    <div class="status-dot"></div>
+    <span id="api-status">Connecting</span>
+  </div>
+</nav>
+
+<!-- SUB NAV -->
+<div class="nav-sub">
+  <div class="nav-sub-item active">Dashboard</div>
+  <div class="nav-sub-item">Inventory</div>
+  <div class="nav-sub-item">AI Optimizer</div>
+  <div class="nav-sub-item">Reports</div>
+</div>
+
+<!-- BODY -->
+<div class="app-body">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <div class="sidebar-widget">
+      <div class="sidebar-widget-title">🔍 Search & Filter</div>
+
+      <div style="margin-bottom:14px">
+        <label class="control-label">Search Products</label>
+        <input class="search-box" type="text" id="search-input" placeholder="Search by product name..." />
+      </div>
+
+      <div style="margin-bottom:14px">
+        <label class="control-label">Min. Inventory Age <span id="age-display-inline">90 days</span></label>
+        <div class="age-display"><span id="age-display">90</span> <small>days old</small></div>
+        <input type="range" id="age-slider" min="0" max="300" value="90" step="5" />
+        <div class="range-labels"><span>0d</span><span>150d</span><span>300d</span></div>
+      </div>
+
+      <div>
+        <label class="control-label">Filter by Category</label>
+        <div class="category-list" id="category-list">
+          <div style="padding:8px;color:var(--text-muted);font-size:12px">Loading<span class="loading-dots"></span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar-widget">
+      <div class="sidebar-widget-title">📂 Upload Data</div>
+      <label class="upload-zone" for="csv-file-input">
+        ⬆ Upload CSV File<br>
+        <small style="color:var(--text-muted)">Click to browse</small>
+      </label>
+      <input type="file" id="csv-file-input" accept=".csv" />
+      <div id="upload-alert" style="margin-top:8px"></div>
+    </div>
+
+    <div class="sidebar-widget" style="background:var(--accent-light);border-color:var(--accent-border)">
+      <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:8px">🤖 AI Liquidation Engine</div>
+      <div style="font-size:12px;color:var(--text-secondary);margin-bottom:12px;line-height:1.5">Analyzes overstock items and generates pricing strategies using Groq LLaMA.</div>
+      <button class="run-btn" id="run-btn">
+        ▶ &nbsp;Run AI Optimizer
+      </button>
+    </div>
+
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+      <a href="#">Home</a> <span>›</span>
+      <a href="#">Inventory</a> <span>›</span>
+      <span style="color:var(--text)">Dashboard</span>
+    </div>
+
+    <!-- KPI Cards -->
+    <div class="kpi-row">
+      <div class="kpi-card">
+        <div class="kpi-icon">📦</div>
+        <div class="kpi-label">Total Inventory</div>
+        <div class="kpi-value blue" id="kpi-total">—</div>
+        <div class="kpi-sub">All tracked SKUs</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-icon">🔎</div>
+        <div class="kpi-label">Filtered Items</div>
+        <div class="kpi-value" id="kpi-filtered">—</div>
+        <div class="kpi-sub">Matching current filters</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-icon">⚠</div>
+        <div class="kpi-label">Overstock Items</div>
+        <div class="kpi-value orange" id="kpi-overstock">—</div>
+        <div class="kpi-sub">Age ≥ 90 days</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-icon">🚨</div>
+        <div class="kpi-label">Critical Stock</div>
+        <div class="kpi-value red" id="kpi-critical">—</div>
+        <div class="kpi-sub">Age ≥ 180 days</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-icon">⏰</div>
+        <div class="kpi-label">At-Risk Items</div>
+        <div class="kpi-value orange" id="kpi-atrisk">—</div>
+        <div class="kpi-sub">Age ≥ 120 days</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-icon">💰</div>
+        <div class="kpi-label">Total Value</div>
+        <div class="kpi-value green" id="kpi-value">—</div>
+        <div class="kpi-sub">USD at cost</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-icon">🌿</div>
+        <div class="kpi-label">Waste Footprint</div>
+        <div class="kpi-value" id="kpi-co2">—</div>
+        <div class="kpi-sub">kg CO₂ at risk</div>
+      </div>
+    </div>
+
+    <!-- Inventory Table -->
+    <div class="section-card">
+      <div class="section-head">
+        <span class="section-title">📋 Inventory Snapshot</span>
+        <span class="section-count" id="inventory-count">Loading...</span>
+      </div>
+      <div class="table-scroll">
+        <table id="inventory-table">
+          <thead>
+            <tr>
+              <th>SKU</th>
+              <th>Product Name</th>
+              <th>Category</th>
+              <th>Age (Days)</th>
+              <th>Cost (USD)</th>
+              <th>CO₂ (kg)</th>
+              <th>Stock Level</th>
+            </tr>
+          </thead>
+          <tbody id="inventory-body">
+            <tr><td colspan="7" class="empty-state">Loading inventory<span class="loading-dots"></span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- AI Optimizer -->
+    <div class="section-card">
+      <div class="section-head">
+        <span class="section-title">🤖 AI Liquidation Results</span>
+        <span class="section-count" id="opt-count" style="display:none"></span>
+      </div>
+      <div class="opt-toolbar">
+        <span class="opt-toolbar-label">Processing</span>
+        <div class="progress-wrap">
+          <div class="progress-bar" id="progress-bar"></div>
+        </div>
+        <span class="progress-text" id="progress-text">—</span>
+      </div>
+      <div class="stream-results" id="stream-results">
+        <div class="empty-state">
+          <div class="empty-state-icon">🤖</div>
+          <strong>AI Optimizer Ready</strong>
+          <p style="margin-top:6px">Use the sidebar to set filters, then click <strong>Run AI Optimizer</strong> to generate liquidation strategies.</p>
+        </div>
+      </div>
+      <div class="summary-strip" id="summary-grid" style="display:none">
+        <div class="sum-cell">
+          <div class="sum-val green" id="sum-profit">$0</div>
+          <div class="sum-lbl">💰 Est. Revenue Recovery</div>
+        </div>
+        <div class="sum-cell">
+          <div class="sum-val" id="sum-co2">0 kg</div>
+          <div class="sum-lbl">🌿 CO₂ Waste Prevented</div>
+        </div>
+        <div class="sum-cell">
+          <div class="sum-val" id="sum-urgency">—</div>
+          <div class="sum-lbl">📊 Urgency Breakdown</div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<script>
+const API_BASE = 'http://localhost:8000';
+let selectedCategories = new Set();
+let allCategories = [];
+let inventoryData = [];
+let isRunning = false;
+
+function fmt$(n) { return '$' + Number(n).toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2}); }
+function fmtNum(n) { return Number(n).toLocaleString('en-US'); }
+
+// === API STATUS CHECK ===
+async function checkStatus() {
+  const badge = document.getElementById('status-badge');
+  const text = document.getElementById('api-status');
+  try {
+    const r = await fetch(`${API_BASE}/`, { signal: AbortSignal.timeout(4000) });
+    if (r.ok) {
+      text.textContent = 'API Active';
+      badge.className = 'status-badge active';
+    } else {
+      text.textContent = 'API Error';
+      badge.className = 'status-badge offline';
+    }
+  } catch {
+    text.textContent = 'API Offline';
+    badge.className = 'status-badge offline';
+  }
+}
+
+// === LOAD CATEGORIES ===
+async function loadCategories() {
+  try {
+    const r = await fetch(`${API_BASE}/categories`);
+    const d = await r.json();
+    allCategories = d.categories || [];
+    selectedCategories = new Set(allCategories);
+    renderCategories();
+  } catch (e) {
+    console.error('Failed to load categories:', e);
+  }
+}
+
+function renderCategories() {
+  const el = document.getElementById('category-list');
+  if (!allCategories.length) {
+    el.innerHTML = '<div style="padding:8px;color:var(--text-muted);font-size:12px">No data</div>';
+    return;
+  }
+  el.innerHTML = allCategories.map(cat => `
+    <div class="category-item ${selectedCategories.has(cat) ? 'active' : ''}" onclick="toggleCategory('${cat}')">
+      <div class="category-check">${selectedCategories.has(cat) ? '✓' : ''}</div>
+      <span>${cat}</span>
+    </div>
+  `).join('');
+}
+
+function toggleCategory(cat) {
+  if (selectedCategories.has(cat)) {
+    selectedCategories.delete(cat);
+  } else {
+    selectedCategories.add(cat);
+  }
+  renderCategories();
+  loadInventory();
+  loadStats();
+}
+
+// === LOAD STATS ===
+async function loadStats() {
+  try {
+    const age = document.getElementById('age-slider').value;
+    const r = await fetch(`${API_BASE}/stats?min_age=${age}`);
+    const d = await r.json();
+    const s = d.stats;
+    document.getElementById('kpi-total').textContent = fmtNum(s.total_inventory);
+    document.getElementById('kpi-overstock').textContent = fmtNum(s.overstock_items);
+    document.getElementById('kpi-atrisk').textContent = fmtNum(s.at_risk_items);
+    document.getElementById('kpi-critical').textContent = fmtNum(s.critical_items);
+    document.getElementById('kpi-value').textContent = '$' + fmtNum(Math.round(s.total_value));
+    document.getElementById('kpi-co2').textContent = fmtNum(Math.round(s.total_waste_footprint_kg)) + ' kg';
+  } catch (e) {
+    console.error('Stats error:', e);
+  }
+}
+
+// === LOAD INVENTORY ===
+async function loadInventory() {
+  const age = document.getElementById('age-slider').value;
+  const search = document.getElementById('search-input').value;
+  const cats = [...selectedCategories].join(',');
+
+  let url = `${API_BASE}/inventory?min_age=0&max_age=9999`;
+  if (age > 0) url += `&min_age=${age}`;
+  if (cats) url += `&categories=${encodeURIComponent(cats)}`;
+  if (search) url += `&search=${encodeURIComponent(search)}`;
+
+  try {
+    const r = await fetch(url);
+    const d = await r.json();
+    inventoryData = d.data || [];
+    document.getElementById('kpi-filtered').textContent = fmtNum(d.count);
+    document.getElementById('inventory-count').textContent = `${fmtNum(d.count)} items`;
+    renderInventoryTable(inventoryData);
+  } catch (e) {
+    console.error('Inventory error:', e);
+    document.getElementById('inventory-body').innerHTML = `
+      <tr><td colspan="7" class="empty-state" style="color:var(--red)">
+        ⚠ Cannot reach API at ${API_BASE}. Make sure <code>uvicorn</code> is running.
+      </td></tr>`;
+  }
+}
+
+function renderInventoryTable(data) {
+  const tbody = document.getElementById('inventory-body');
+  if (!data.length) {
+    tbody.innerHTML = `<tr><td colspan="7" class="empty-state">
+      <div class="empty-state-icon">📭</div>
+      No items match the current filters
+    </td></tr>`;
+    return;
+  }
+  tbody.innerHTML = data.map(row => {
+    const ageClass = row.inventory_age_days >= 180 ? 'over180' : row.inventory_age_days >= 90 ? 'over90' : '';
+    return `<tr>
+      <td class="td-id">${row.product_id || '—'}</td>
+      <td class="td-name">${row.product_name}</td>
+      <td>${row.category}</td>
+      <td class="td-age ${ageClass}">${row.inventory_age_days}d</td>
+      <td>${fmt$(row.original_cost_usd)}</td>
+      <td>${row.waste_footprint_kg} kg</td>
+      <td>${row.stock_level !== undefined ? row.stock_level : '—'}</td>
+    </tr>`;
+  }).join('');
+}
+
+// === RUN AI OPTIMIZER ===
+async function runOptimizer() {
+  if (isRunning) return;
+  isRunning = true;
+
+  const btn = document.getElementById('run-btn');
+  btn.disabled = true;
+  btn.innerHTML = '⏳ &nbsp;Processing<span class="loading-dots"></span>';
+
+  const age = document.getElementById('age-slider').value;
+  const cats = [...selectedCategories].join(',');
+
+  const streamEl = document.getElementById('stream-results');
+  streamEl.innerHTML = '';
+
+  const progressBar = document.getElementById('progress-bar');
+  const progressText = document.getElementById('progress-text');
+  progressBar.style.width = '0%';
+  progressText.textContent = '0%';
+
+  document.getElementById('summary-grid').style.display = 'none';
+  const optCount = document.getElementById('opt-count');
+  optCount.style.display = 'none';
+  optCount.textContent = '';
+
+  let url = `${API_BASE}/optimize?min_age=${age}`;
+  if (cats) url += `&categories=${encodeURIComponent(cats)}`;
+
+  try {
+    const response = await fetch(url, { method: 'POST' });
+    const reader = response.body.getReader();
+    const decoder = new TextDecoder();
+    let buffer = '';
+
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+
+      buffer += decoder.decode(value, { stream: true });
+      const lines = buffer.split('\n');
+      buffer = lines.pop();
+
+      for (const line of lines) {
+        if (!line.startsWith('data: ')) continue;
+        const jsonStr = line.slice(6).trim();
+        if (!jsonStr) continue;
+
+        try {
+          const data = JSON.parse(jsonStr);
+
+          if (data.error) {
+            streamEl.innerHTML += `<div style="color:var(--red);padding:12px;background:var(--red-light);border-radius:4px;font-size:13px">⚠ ${data.error}</div>`;
+            continue;
+          }
+
+          if (data.done) {
+            progressBar.style.width = '100%';
+            progressText.textContent = '100%';
+
+            optCount.textContent = `${data.total_processed} items processed`;
+            optCount.style.display = 'inline-block';
+
+            document.getElementById('sum-profit').textContent = fmt$(data.total_profit);
+            document.getElementById('sum-co2').textContent = fmtNum(Math.round(data.total_co2_kg)) + ' kg';
+            document.getElementById('sum-urgency').innerHTML = `
+              <span style="color:var(--red)">${data.high_urgency} High</span> &nbsp;
+              <span style="color:#c45500">${data.medium_urgency} Med</span> &nbsp;
+              <span style="color:var(--green)">${data.low_urgency} Low</span>
+            `;
+            document.getElementById('summary-grid').style.display = 'grid';
+            continue;
+          }
+
+          const pct = Math.round((data.progress / data.total) * 100);
+          progressBar.style.width = pct + '%';
+          progressText.textContent = `${data.progress} / ${data.total}`;
+
+          const profitClass = data.est_profit >= 0 ? 'pos' : 'neg';
+          const profitSign = data.est_profit >= 0 ? '+' : '';
+
+          const row = document.createElement('div');
+          row.className = `result-row ${data.urgency}`;
+          row.innerHTML = `
+            <div>
+              <div class="r-sku">${data.sku}</div>
+              <div style="margin-top:6px"><span class="badge badge-${data.urgency}">${data.urgency.toUpperCase()}</span></div>
+            </div>
+            <div>
+              <div class="r-name">${data.item}</div>
+              <div class="r-category">${data.category} · ${data.age_days} days old</div>
+            </div>
+            <div>
+              <div class="r-col-label">Resale Price</div>
+              <div class="r-price"><small>$</small>${Number(data.resale_price).toFixed(2)}</div>
+            </div>
+            <div>
+              <div class="r-col-label">Est. Profit</div>
+              <div class="r-profit ${profitClass}">${profitSign}${fmt$(data.est_profit)}</div>
+            </div>
+            <div>
+              <div class="r-col-label">CO₂ Saved</div>
+              <div style="font-size:14px;font-weight:600;color:var(--green)">${data.co2_impact_kg} kg</div>
+            </div>
+            <div class="r-strategy">${data.strategy}</div>
+          `;
+          streamEl.appendChild(row);
+          streamEl.scrollTop = streamEl.scrollHeight;
+
+        } catch (parseErr) {
+          console.error('JSON parse error:', parseErr, jsonStr);
+        }
+      }
+    }
+  } catch (err) {
+    streamEl.innerHTML = `<div style="padding:24px;text-align:center;background:var(--red-light);border-radius:4px;margin:8px">
+      <div style="font-size:24px;margin-bottom:8px">⚠</div>
+      <strong style="color:var(--red)">Failed to connect to optimizer.</strong><br>
+      <span style="color:var(--text-secondary);font-size:12px;margin-top:6px;display:block">Make sure FastAPI is running at <code>${API_BASE}</code></span>
+    </div>`;
+  } finally {
+    isRunning = false;
+    btn.disabled = false;
+    btn.innerHTML = '▶ &nbsp;Run AI Optimizer';
+  }
+}
+
+// === CSV UPLOAD ===
+document.getElementById('csv-file-input').addEventListener('change', async (e) => {
+  const file = e.target.files[0];
+  if (!file) return;
+
+  const alertEl = document.getElementById('upload-alert');
+  alertEl.className = 'alert info';
+  alertEl.textContent = `Uploading ${file.name}...`;
+
+  const fd = new FormData();
+  fd.append('file', file);
+
+  try {
+    const r = await fetch(`${API_BASE}/upload`, { method: 'POST', body: fd });
+    const d = await r.json();
+    if (d.success) {
+      alertEl.className = 'alert success';
+      alertEl.textContent = `✓ Loaded ${d.row_count} rows from ${d.filename}`;
+      await init();
+    } else {
+      alertEl.className = 'alert error';
+      alertEl.textContent = '⚠ ' + (d.detail || 'Upload failed');
+    }
+  } catch (err) {
+    alertEl.className = 'alert error';
+    alertEl.textContent = '⚠ Upload failed — API offline?';
+  }
+});
+
+// === EVENTS ===
+document.getElementById('age-slider').addEventListener('input', (e) => {
+  document.getElementById('age-display').textContent = e.target.value;
+  document.getElementById('age-display-inline').textContent = e.target.value + ' days';
+  loadInventory();
+  loadStats();
+});
+
+document.getElementById('search-input').addEventListener('input', () => {
+  loadInventory();
+});
+
+document.getElementById('run-btn').addEventListener('click', runOptimizer);
+
+// === INIT ===
+async function init() {
+  await checkStatus();
+  await loadCategories();
+  await loadStats();
+  await loadInventory();
+}
+
+init();
+</script>
+</body>
+</html>
