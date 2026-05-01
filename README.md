@@ -165,10 +165,9 @@ Developed for **HCBC Hackathon 2026**
 
 | Members | 
 |--------|
-| **Samana** | 
-| **Binanshika**|
-| **Poonam** | 
-| **Ashrika** | 
+| **Samana Dahal** | 
+| **Binanshika Basnet**|
+| **Poonam Bhandari** | 
 ---------
 
 ##  Future Work
