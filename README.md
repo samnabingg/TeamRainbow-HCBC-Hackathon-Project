@@ -1,53 +1,97 @@
-#  Eco-Arbitrage: AI-Powered Value Recovery
+#  Eco-Arbitrage AI
+
+## AI-Powered Inventory Value Recovery & Liquidation System
 
 **Built for HCBC Hackathon 2026 | Theme: "AI for a Smarter Tomorrow"**
 
-Eco-Arbitrage is an automated workflow designed to solve a multi-billion dollar problem: **unsold inventory.** By combining AI-driven logistics with circular economy principles, this tool transforms "dead stock" into liquid capital and prevents environmental waste.
-
 ---
 
-##  The Vision
-E-commerce businesses lose millions to "shrink" and storage costs for items that sit idle. Eco-Arbitrage acts as an **Autonomous Resale Agent** that:
-1. **Identifies** slow-moving stock before it becomes a total loss.
-2. **Optimizes** resale pricing using AI logic.
-3. **Automates** the creation of marketplace-ready listings.
+##  Project Overview
+
+Eco-Arbitrage is an autonomous AI-powered inventory liquidation platform that transforms unsold stock ("dead inventory") into liquid capital while preventing environmental waste. The system uses AI-driven pricing optimization and automated marketplace deployment to recover maximum value from overstock items.
 
 ---
 
 ##  Key Features
-- **Smart Detection:** Automatically flags inventory stored for over 90 days.
-- **AI Pricing Engine:** Estimates the "Sweet Spot" price to ensure quick liquidation while maintaining margins.
-- **Auto-Copywriter:** Generates SEO-optimized product descriptions for platforms like Poshmark or eBay.
-- **Impact Dashboard:** Real-time visualization of **Recovered Value ($)** and **Waste Prevented (kg)**.
-- **Agentic Workflow:** Simulated "One-Click" posting to secondary marketplaces.
+
+###  AI Liquidation Engine
+- **Smart Detection**: Automatically flags inventory stored 90+ days
+- **AI Pricing**: Uses Groq LLaMA 3.3 70B for intelligent pricing
+- **Auto-Copywriter**: Generates SEO-optimized product descriptions
+- **Urgency Classification**: High/Medium/Low priority indicators
+- **Streaming Results**: Real-time progress visualization
+
+###  Dashboard & Analytics
+- KPI Cards: Total Inventory, Overstock Items, Critical Stock, At-Risk Items
+- Value Metrics: Total Value (USD), Waste Footprint (kg CO₂)
+- Filter by: Product name, inventory age, category
+- Real-time stats updates
+
+###  Marketplace Scraper
+- Scrape Amazon, eBay, Etsy product data
+- Configurable pages (1-5)
+- Auto-generates importable CSV files
+
+###  Data Management
+- CSV file upload with validation
+- Auto-extract categories from data
+- Sample data included (30+ products)
+
+###  One-Click Deployment
+- **eBay**: Fixed-price GTC listings (13.25% fee)
+- **Depop**: BuyNow listings (10% + $0.30 fee)
+- **Local**: Internal marketplace (0% fee)
+
+###  Platform Listing Pages
+- eBay-style product page
+- Depop-style social listing
+- Local marketplace pickup UI
 
 ---
 
 ##  Tech Stack
-*   **Frontend:** [Streamlit](https://streamlit.io) (Rapid UI Deployment)
-*   **Intelligence:** [OpenAI API](https://openai.com) (GPT-4o for pricing & copy)
-*   **Data:** [Pandas](https://pydata.org) (Inventory Analysis)
-*   **Backend:** Python 3.11+
+
+| Layer | Technology |
+|-------|----------|
+| Frontend | Pure HTML/CSS/JS |
+| Backend | FastAPI (Python 3.11+) |
+| AI Engine | Groq LLaMA 3.3 70B |
+| Scraping | BeautifulSoup + ScraperAPI |
+| Data | Pandas + CSV |
 
 ---
 
 ##  Project Structure
-```text
+
+```
 eco-arbitrage/
-├── demo/                # Demo videos & UI screenshots
-├── src/
-│   ├── app.py           # Main Streamlit UI
-│   ├── agent.py         # AI Logic & OpenAI Integration
-│   └── data.csv         # Mock Inventory Dataset
-├── .env                 # API Keys (GitIgnored)
-└── README.md
+├── README.md                  # This file
+├── START_HACKATHON.md        # Hackathon starter template
+├── .gitignore             # Git ignore patterns
+├── docs/
+│   └── README.md          # Documentation folder
+├── demo/
+│   └── .gitkeep         # Demo screenshots
+└── src/
+    ├── index.html      # Frontend dashboard
+    ├── api.py       # FastAPI backend
+    ├── agent.py     # Groq AI agent
+    ├── scraper.py   # Web scraper
+    ├── requirements.txt
+    ├── data.csv    # Sample inventory (dishwashers)
+    ├── data_1.csv  # Additional inventory
+    └── uploads/    # Uploaded CSV files
 ```
 
 ---
 
 ##  Setup Instructions
 
-### 1. Clone & Enter
+### Prerequisites
+- Python 3.11+
+- API key for Groq (free at console.groq.com)
+
+### 1. Clone Repository
 ```bash
 git clone https://github.com/samnabingg/TeamRainbow-HCBC-Hackathon-Project
 cd eco-arbitrage
@@ -55,36 +99,92 @@ cd eco-arbitrage
 
 ### 2. Install Dependencies
 ```bash
-pip install pandas openai streamlit python-dotenv
+pip install -r src/requirements.txt
 ```
 
 ### 3. Configure API Key
-Create a `.env` file in the `src/` directory:
+Create `src/.env`:
 ```env
-OPENAI_API_KEY=your_actual_key_here
+GROQ_API_KEY=your_groq_api_key_here
+SCRAPER_API_KEY=your_scraperapi_key_here  # optional
 ```
 
-### 4. Launch the App
+### 4. Run Backend
 ```bash
-streamlit run src/app.py
+cd src
+uvicorn api:app --host 0.0.0.0 --port 8000 --reload
+```
+
+### 5. Access Dashboard
+- Web UI: http://localhost:8000/ui
+- API Base: http://localhost:8000
+
+---
+
+## 📡 API Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/` | API info |
+| GET | `/ui` | Frontend dashboard |
+| GET | `/inventory` | Get filtered inventory |
+| GET | `/categories` | Get unique categories |
+| GET | `/stats` | Get KPI stats |
+| POST | `/optimize` | Run AI optimizer (streaming) |
+| POST | `/upload` | Upload CSV file |
+| POST | `/scrape` | Scrape marketplace |
+| POST | `/deploy` | Deploy to marketplace |
+| GET | `/deployments` | Get all deployments |
+| GET | `/listing/{id}` | View listing page |
+
+---
+
+##  Data Format
+
+### CSV Columns Required
+```csv
+product_id,product_name,category,original_cost_usd,inventory_age_days,waste_footprint_kg,stock_level
+B001,Product Name,Category,29.99,120,0.9,15
 ```
 
 ---
 
-## Business Impact
-- **Recovery:** Recovers up to 40-60% of original cost on items usually destined for landfills.
-- **Efficiency:** Reduces the time spent on manual liquidation from hours to seconds.
-- **Sustainability:** Directly contributes to **Circular Economy** goals by extending product lifecycles.
+##  Business Impact
+
+| Metric | Value |
+|--------|-------|
+| Recovery Rate | 40-60% of original cost |
+| Processing Time | Hours → Seconds |
+| Platform Reach | eBay, Depop, Local |
 
 ---
 
-##  Limitations & Future Work
-*   **Current:** Uses static CSV data and simulated marketplace APIs.
-*   **Future:** Integration with **Shopify/Amazon APIs**, real-time market trend analysis, and automated image enhancement for listings.
+## 👥 Team
+
+Developed for **HCBC Hackathon 2026** 
+
+| Members | 
+|--------|
+| **Samana** | 
+| **Binanshika**|
+| **Poonam** | 
+| **Ashrika** | 
+---------
+
+##  Future Work
+
+- Real Shopify/Amazon API integration
+- AI product image enhancement
+- Real-time market trend analysis
+- Multi-channel: Mercari, Poshmark, StockX
 
 ---
 
-##  The Team
-Developed in **10 Hours** for the HCBC Hackathon 2026. 
-Members: Samana Dahal, Poonam Bhandari, Ashrika Ranjit
-*Focus: AI Strategy, Software Automation, and Business Sustainability.*
+##  License
+
+MIT License
+
+---
+
+*Built for HCBC Hackathon 2026*  
+*Theme: AI for a Smarter Tomorrow*
