@@ -1,109 +1,33 @@
 product_id,product_name,category,original_cost_usd,inventory_age_days,waste_footprint_kg,stock_level
-B07XLTPC5L,Gildan,tshirt,20.99,79,0.63,31
-B086L5PJQY,Hanes,tshirt,17.99,176,0.54,4
-B0GSD147D8,BAPHITY,tshirt,24.99,71,0.75,21
-B00D1ARZMC,Hanes,tshirt,20.0,112,0.6,49
-B071HG8GSV,Russell Athletic,tshirt,8.0,44,0.24,48
-B07JCS8NRC,Gildan,tshirt,22.99,112,0.69,33
-B07CX29FLX,Gildan,tshirt,32.99,181,0.99,45
-B0828NMY5V,Gildan,tshirt,27.9,99,0.84,38
-B07JDFPQTC,Gildan,tshirt,22.99,38,0.69,21
-B077ZJXCTS,Gildan,tshirt,20.99,83,0.63,16
-B01KNM3HZO,Hanes,tshirt,15.0,130,0.45,22
-B00W66LQFO,Fruit of the Loom,tshirt,22.98,132,0.69,41
-B0FXWX7WFR,Sailwind,tshirt,19.99,138,0.6,2
-B0000ANHSZ,Carhartt,tshirt,19.99,109,0.6,6
-B0FWWTPW24,ANRABESS,tshirt,9.99,57,0.3,45
-B0799C1ZCG,Fruit of the Loom,tshirt,15.99,42,0.48,18
-B00KBZOTI8,Hanes,tshirt,16.11,179,0.48,24
-B07MDCSYLD,Gildan,tshirt,11.24,128,0.34,26
-B0DQCS6KNS,ANRABESS,tshirt,9.98,117,0.3,31
-B00LSRU1QW,Hanes,tshirt,14.99,196,0.45,23
-B0D8TJXFZY,Siimcuzy,tshirt,29.99,152,0.9,14
-B09B5BQ3YX,AKAWOOKO,tshirt,19.99,94,0.6,15
-B0D2PKQGQV,Hanes,tshirt,24.98,196,0.75,28
-B0D4YVWGHF,EKLENTSON,tshirt,9.98,45,0.3,44
-B00KRYLOVS,Hanes,tshirt,8.78,118,0.26,31
-B08BBYCN46,MCPORO,tshirt,24.99,146,0.75,14
-B0DHXBV1WR,ANRABESS,tshirt,8.54,142,0.26,5
-B0BPYCHYP9,Trendy Queen,tshirt,9.99,50,0.3,8
-B0CMLRGXRH,ANRABESS,tshirt,8.99,184,0.27,15
-B09SNTBDKQ,AUTOMET,tshirt,8.99,118,0.27,8
-B0812JMR5N,Comfort Colors,tshirt,18.64,122,0.56,1
-B075ZZF1BF,Gildan,tshirt,10.68,30,0.32,26
-B00NOY3CWC,Hanes,tshirt,8.98,33,0.27,21
-B0BTTPRBC1,Hanes,tshirt,8.99,115,0.27,50
-B0BXFHW91M,BAMBOO COOL,tshirt,37.9,155,1.14,4
-B0CXJHCVHZ,BJY,tshirt,9.99,86,0.3,50
-B09TPJS3G9,Amazon Essentials,tshirt,12.52,184,0.38,15
-B0DJNJBVWG,ADOREJOY,tshirt,9.98,130,0.3,32
-B0CRTPYJRD,AUTOMET,tshirt,8.99,80,0.27,41
-B07756MBWS,Amazon Essentials,tshirt,11.0,193,0.33,13
-B0D8721LKK,YUCOLEN,tshirt,9.99,80,0.3,22
-B074XY2K7M,Hanes,tshirt,18.75,151,0.56,7
-B00B6E7AEI,Dickies,tshirt,16.99,105,0.51,34
-B07611Y7NN,Gildan,tshirt,11.84,182,0.36,6
-B0BVFNPSGN,Trendy Queen,tshirt,9.99,163,0.3,5
-B0845RKCD9,Madewell,tshirt,28.0,42,0.84,37
-B0CYC5GDYP,Trendy Queen,tshirt,9.99,117,0.3,33
-B08RMLYGNS,WIHOLL,tshirt,9.99,90,0.3,31
-B0DK3JM2M6,domirica,tshirt,61.99,75,1.86,41
-B0FH3XPTPL,domirica,tshirt,25.01,92,0.75,22
-B0FH3NWK9N,domirica,tshirt,25.01,190,0.75,5
-B0GTV35NXK,domirica,tshirt,27.99,44,0.84,9
-B0CTKGZJZS,AUTOMET,tshirt,9.99,146,0.3,45
-B07Q77T2R8,Fruit of the Loom,tshirt,27.16,164,0.81,6
-B0DHQHZBXJ,Dokotoo,tshirt,14.98,96,0.45,8
-B002GHC198,Carhartt,tshirt,19.99,77,0.6,7
-B0812JGQXQ,Comfort Colors,tshirt,18.82,138,0.56,40
-B0DZ6BDKJH,AUTOMET,tshirt,8.98,91,0.27,6
-B0GMVSGH3Y,domirica,tshirt,30.99,42,0.93,3
-B0DC6RQNTD,MARSVOVO,tshirt,27.99,48,0.84,25
-B0GLYKX5QJ,MARSVOVO,tshirt,26.99,122,0.81,37
-B0GLYNYYD8,MARSVOVO,tshirt,26.99,45,0.81,19
-B0CXJBPJLF,AUTOMET,tshirt,7.99,153,0.24,6
-B0BNK247HV,Hanes,tshirt,6.32,68,0.19,48
-B004NNUWEE,Carhartt,tshirt,24.99,151,0.75,3
-B0DNXFJXKN,AUTOMET,tshirt,6.99,48,0.21,38
-B0GFWKG2BT,MARSVOVO,tshirt,26.99,174,0.81,2
-B0GM72YBFN,MARSVOVO,tshirt,26.99,61,0.81,4
-B0GM6YL9T8,MARSVOVO,tshirt,26.99,123,0.81,27
-B0GTD7YV38,Scapodo,tshirt,32.98,102,0.99,24
-B0G72655YR,COOFANDY,tshirt,12.99,191,0.39,1
-B07GBWZQPL,POLO RALPH LAUREN,tshirt,55.0,73,1.65,3
-B0007XB2Y8,Carhartt,tshirt,19.99,41,0.6,16
-B07M8YF6D9,Comfort Colors,tshirt,10.55,170,0.32,27
-B0DK3K9WRV,PRETTYGARDEN,tshirt,9.99,125,0.3,32
-B07XVY1LJ2,Gildan,tshirt,20.99,120,0.63,43
-B0BV2674PH,COOFANDY,tshirt,24.48,30,0.73,29
-B07MNSWMC7,Gildan,tshirt,10.65,100,0.32,28
-B09KTJSQST,Carhartt,tshirt,19.99,34,0.6,21
-B07M8YDT7Q,Comfort Colors,tshirt,10.2,158,0.31,47
-B00KBZP3YW,Hanes,tshirt,18.0,40,0.54,11
-B08J948LG7,Amazon Essentials,tshirt,7.79,157,0.23,44
-B0GHRTGYQV,Zeagoo,tshirt,9.99,109,0.3,13
-B0DP8TJXB3,EasyGala,tshirt,14.38,44,0.43,5
-B0G3WHZNNF,Zeagoo,tshirt,14.97,124,0.45,9
-B0C15C3BG8,Champion,tshirt,10.0,61,0.3,12
-B0CPSKZ7LH,Zeagoo,tshirt,5.98,61,0.18,16
-B09TPKBJWS,Amazon Essentials,tshirt,12.52,180,0.38,46
-B07MMSGDGF,Gildan,tshirt,9.04,105,0.27,17
-B0CQRJMMMD,PUMIEY,tshirt,14.99,108,0.45,41
-B07CZLNB31,Under Armour,tshirt,13.74,39,0.41,6
-B07MGYHJZY,Gildan,tshirt,16.49,172,0.49,8
-B0GHRJHQ86,Zeagoo,tshirt,7.99,95,0.24,20
-B07M61KF9Q,Gildan,tshirt,16.49,144,0.49,16
-B00KRYLT0E,Hanes,tshirt,8.78,35,0.26,20
-B07MGYH1XC,Gildan,tshirt,10.78,98,0.32,29
-B0FMT8YG6R,Comfort Colors,tshirt,12.45,126,0.37,24
-B001JDPYZS,Pietra Rivoli,tshirt,0.0,143,0.0,23
-B0F67LQ81L,The Children's Place,tshirt,12.4,159,0.37,13
-B07MGZFY7K,Hanes,tshirt,14.42,59,0.43,2
-B00WK0TGUI,Hanes,tshirt,12.0,187,0.36,29
-B0CN824Q73,Carhartt,tshirt,27.99,139,0.84,47
-B07QNJ8YVV,Dickies,tshirt,16.99,162,0.51,4
-B0CYZNT7LJ,ANRABESS,tshirt,13.29,142,0.4,6
-B0132MGHNQ,Hanes,tshirt,12.99,118,0.39,9
-B07MKS4NNZ,Hanes,tshirt,15.99,159,0.48,13
-B09KT988KL,Carhartt,tshirt,27.99,85,0.84,42
-B00KBZSWR2,Hanes,tshirt,18.0,167,0.54,45
+B0FMHTGJCQ,"Kenmore 24"" Premium Hybrid Tub Dishwasher - UltraWash, MoreSpace Adjustable Rack, High Temp & SmartWash - 12 Place Settings - 54 DBA - ENERGY STAR Certified - Fingerprint Resistant Stainless Steel",dishwasher,499.99,127,15.0,30
+B0DWJLWVD8,Frigidaire 24 in. Top Control Built-in Tall Tub Dishwasher in Stainless Steel with 5-Cycles 49dBA and Hybrid Tub FDHP4336AS,dishwasher,479.0,72,14.37,40
+B09ST4M8VF,"COMFEE’ Countertop Dishwasher, Energy Star Portable Dishwasher, 6 Place Settings & 8 Washing Programs, Speed, Baby-Care, ECO& Glass, Dish Washer for Dorm, RV& Apartment, Black",dishwasher,278.99,157,8.37,28
+B0FGB53WVT,"Sharp SDW6504MS Stainless Steel Dishwasher, 24-inch Pocket Handle, 52 dB, Hybrid Tub, 12 Place Settings, 5 Cycles, Heated Dry",dishwasher,429.0,187,12.87,13
+B0FDBJW9ND,"Cascade Platinum Plus Dishwasher Pods, Dish Detergent Soap, Clean Scent, 62 Count",dishwasher,24.94,116,0.75,38
+B0CGKWPSZY,"Samsung DW80CG4021SR 24-Inch Top Control Built-In Dishwasher, 15 Place Settings, 53 dBA Quiet Operation, 4 Wash Cycles, Stainless Steel",dishwasher,399.0,103,11.97,9
+B0CN1FYKPC,"Samsung Bespoke Smart 46 dBA Dishwasher with 3rd Rack and StormWash, Stainless Steel, DW60R2014US/AA",dishwasher,579.0,168,17.37,50
+B00MB3JW44,"Cascade Complete Dishwasher Detergent Liquid Gel, Dish Detergent, Dishwasher Soap, Citrus, 75oz",dishwasher,7.59,104,0.23,37
+B0FG9ZKV69,"Sharp SDW6736MS 24-inch Stainless Steel Dishwasher, Third Rack, Library Quiet 47 dB, Power Wash Sprayer",dishwasher,579.0,72,17.37,6
+B0BDJ9M1TN,"BLUELAND 100% Plastic-Free Dishwasher Detergent Tablets, 60 Count, Free & Clear, Eco-Friendly Dishwashing Pods, Natural, USDA Certified biobased",dishwasher,20.99,159,0.63,43
+B0CVX5GBY5,"EUHOMY Countertop Dishwasher Portable with 6 Programs, 5L Built-in Water Tank for Apartments & RV, 167℉ High-Temp, No Hookup Needed, Mini Dishwasher with Baby Care, Air Dry/Quick/ECO/Fruit/Normal Mode",dishwasher,242.99,121,7.29,1
+B09QCJ6TDZ,"COMFEE' Portable Mini Dishwasher Countertop with 1.32Gal Built-in Water Tank for Apartments& RVs, No Hookup Needed, 6 Programs, 360° Dual Spray, 162℉ High-Temp& Air-Dry Function",dishwasher,239.98,64,7.2,36
+B07RN6TG1J,"Finish Jet-Dry Dishwasher Rinse Aid, Compatible with Dishwasher Detergent, Prevents Spots & Residues, Dries, Shine & Protects, 32 oz, 315 washes",dishwasher,13.26,131,0.4,41
+B01NCJSM2T,"Cascade Complete Dishwasher Pods - Fresh Scent ActionPacs, Dishwasher Detergent, Dishwasher Soap, Detergent Pods, 78 Count",dishwasher,19.94,162,0.6,25
+B0C84MCVWM,"Midea 18 Inch Built-in Dishwasher, Slim Space-Saving Design with 8 Place Settings, 6 Washing Programs & Stainless Steel Tub, Energy Star Certified Dishwasher with Heated Dry & High Temp Wash, Silver",dishwasher,499.0,77,14.97,18
+B0FNDVM2CZ,"HAMILTON BEACH Portable Dishwasher with Wheels, 19in Wide, 8 Place Settings Capacity, White",dishwasher,519.99,73,15.6,13
+B0CWLHKQNT,"Momcozy KleanPal Pro Baby Bottle Washer, Sterilizer & Dryer - All-in-One Cleaning Machine for Bottles, Pump Parts & Baby Essentials - Time-Saving & Effortless Care",dishwasher,299.99,40,9.0,32
+B0F9B6ZH6F,"Honeywell 18 Inch Dishwasher with 8 Place settings, 6 Washing Programs, Stainless Steel Tub, UL/Energy Star- Black",dishwasher,399.99,58,12.0,15
+B0FG9QGZPX,"Sharp SDW6726MS 24-inch Stainless Steel Dishwasher, 47 dB Library Quiet, Third Rack, Power Wash Sprayer, 12 Place Settings,",dishwasher,579.0,160,17.37,8
+B0BDMV622W,"LG LDTS5552S Top Control Dishwasher with QuadWash, TrueSteam, Dynamic Dry, 3rd Rack, 46 dBA, PrintProof Stainless Steel",dishwasher,1264.0,96,37.92,6
+B0D427B1TR,"BLACK+DECKER 24"" Built-In Dishwasher, 12-Place Setting Capacity with Stainless Steel Tub, Dish Washer with 5 Wash Programs and Smart Wash Cycle, ENERGY STAR Certified, BDW100MW, White",dishwasher,599.48,78,17.98,41
+B0CFPSTQ78,"Kenmore 22-14589 24"" Built-In Dishwasher - UltraWash, SmartWash, Sanitize Rinse, SmartDry, and Leak Detection - 14 Place Settings - 57 DBA - ENERGY STAR Certified - 24"" - Black",dishwasher,599.99,73,18.0,25
+B0FNDVM2CZ,"HAMILTON BEACH Portable Dishwasher with Wheels, 19in Wide, 8 Place Settings Capacity, White",dishwasher,519.99,133,15.6,12
+B0B1P5L7L9,"Molly's Suds Dishwasher Pods | Clean Dishwasher Detergent, Cuts Grease & Rinses Clean (Residue-Free) for Sparkling Dishes | 60 Auto-Release Tabs (Unscented)",dishwasher,19.99,182,0.6,26
+B01MECSGOU,Seventh Generation Dishwasher Detergent Packs for sparkling dishes Free & Clear Dishwasher Tabs (72 Count),dishwasher,23.18,71,0.7,11
+B0DWJ61FB4,"GE GDP670SGVBB 24″ Built-In Top Control Dishwasher with Stainless Steel Interior, 3rd Rack, Bottle Jets, 45 dBA – Black",dishwasher,649.0,168,19.47,10
+B0C84HDJCC,"Midea 18 Inch Built-in Dishwasher, Slim Space-Saving Design with Stainless Steel Tub, 8 Place Settings & 6 Wash Cycles, Energy Star Certified Dishwasher with Heated Dry & High-Temp Wash, Black",dishwasher,449.0,196,13.47,1
+B09QLJR3GP,GE® Top Control with Plastic Interior Dishwasher with Sanitize Cycle & Dry Boost,dishwasher,498.99,129,14.97,28
+B08NMVX6XL,"BLACK+DECKER 18-Inch Portable Dishwasher, 8-Place Setting Capacity, Mobile Dish Washer with 6 Wash Programs, LED Display, Stainless Steel Tub, ENERGY STAR Certified, BPD8B, Black",dishwasher,635.63,105,19.07,28
+B0FPDFG65H,"EUHOMY Countertop Dishwasher Portable, 8 Programs Mini Dishwasher with 5L Built-in Water Tank and Inlet hose, No Hookup Needed, Dish Washer with Self Clean/Baby Care/Air Dry, for Apartments & RVs",dishwasher,288.49,124,8.65,47
+B0CN86DV9L,"Finish Quantum Dishwasher Pods, No Pre-Rinse Dishwasher Detergent Soap Removes 24HR Dried-On Stain and Grease, Leaving a Virtually Spotless Shine, 84 Count",dishwasher,19.99,110,0.6,2
+B0DR9835VR,"Cascade Platinum Plus Dishwasher Pods, Dishwasher Detergent, Dish Detergent Soap, Mountain, 47 Count",dishwasher,19.94,78,0.6,36
