@@ -116,8 +116,7 @@ uvicorn api:app --host 0.0.0.0 --port 8000 --reload
 ```
 
 ### 5. Access Dashboard
-- Web UI: http://localhost:8000/ui
-- API Base: http://localhost:8000
+- Replit app link: https://hcbc-2026-team-rainbow-eco-arbitrage-ai--dahalsamana15.replit.app/ui 
 
 ---
 
